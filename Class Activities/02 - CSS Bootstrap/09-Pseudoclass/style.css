@@ -1,0 +1,10 @@
+.hover{
+    color: orange;
+}
+
+a.hover {
+    color: maroon;
+}
+a.active {
+    color:blue;
+}

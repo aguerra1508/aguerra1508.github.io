@@ -1,0 +1,30 @@
+.container {
+    border: solid;
+    border-width: 2px;
+    border-color: blue;
+}
+.row {
+    border: solid;
+    border-width: 2px;
+    border-color: blue;
+}
+.col-12 {
+    border: solid;
+    border-width: 2px;
+    border-color: blue;
+}
+.col-2 {
+    border: solid;
+    border-width: 2px;
+    border-color: blue;
+}
+.col-3 {
+    border: solid;
+    border-width: 2px;
+    border-color: blue;
+}
+.col-6 {
+    border: solid;
+    border-width: 2px;
+    border-color: blue;
+}
