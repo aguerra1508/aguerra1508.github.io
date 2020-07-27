@@ -1,0 +1,40 @@
+nav {
+    border-color: blue;
+    border-style: solid;
+    border-width: 2px;
+}
+.nav-item {
+    border-color: blue;
+    border-style: solid;
+    border-width: 2px;
+}
+body {
+    background-color: lightblue;
+}
+.container {
+    border-color: blue;
+    border-style: solid;
+    border-width: 2px;
+    background-color: lightgreen;
+}
+.row {
+    border-color: blue;
+    border-style: solid;
+    border-width: 2px;
+}
+.col {
+    border-color: blue;
+    border-style: solid;
+    border-width: 2px;
+}
+img {
+    padding-right: 10px;
+    padding-left: 10px;
+    padding-bottom: 10px;
+}
+form {
+    padding-bottom: 15px;
+}
+footer {
+    text-align:center;
+}
