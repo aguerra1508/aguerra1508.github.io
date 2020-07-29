@@ -1,4 +1,8 @@
-nav {
+/*Including padding and border in the total width and height of the elements.*/
+* {
+    box-sizing: border-box;
+  }
+  nav {
     border-color: blue;
     border-style: solid;
     border-width: 2px;
@@ -12,25 +16,29 @@ body {
     background-color: lightblue;
 }
 .container {
-    border-color: blue;
-    border-style: solid;
-    border-width: 2px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: auto;
+    margin-top:20px;
+}
+.col-6 {
     background-color: lightgreen;
-}
-.row {
     border-color: blue;
     border-style: solid;
-    border-width: 2px;
+    border-width: 2px;   
 }
-.col {
+.col-9 {
+    background-color: lightgreen;
     border-color: blue;
     border-style: solid;
-    border-width: 2px;
+    border-width: 2px;    
 }
-img {
-    padding-right: 10px;
-    padding-left: 10px;
-    padding-bottom: 10px;
+.img-fluid {
+    margin: 28px;
+}
+.float-left {
+    margin-top: 10px;
+    margin-right: 10px;
 }
 form {
     padding-bottom: 15px;
@@ -38,3 +46,24 @@ form {
 footer {
     text-align:center;
 }
+  /* Media Queries*/
+
+  /*Small devices (phone)*/
+  @media (min-width: 576px) {
+
+  }
+  
+  /* Medium devices (tablets, 768px and up)*/
+  @media (min-width: 768px) {
+
+  }
+  
+  /*Large devices (desktops, 992px and up)*/
+  @media (min-width: 992px) {
+
+  }
+  
+  /*Extra large devices (large desktops, 1200px and up)*/
+  @media (min-width: 1200px) {
+
+  }
