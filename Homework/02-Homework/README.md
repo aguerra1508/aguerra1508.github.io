@@ -31,10 +31,11 @@ N/A
 
 ## Badges
 
-https://img.shields.io/w3c-validation/html?targetUrl=https%3A%2F%2Faguerra1508.github.io%2FHomework%2F02-Homework%2Findex.html
-https://img.shields.io/w3c-validation/html?targetUrl=https%3A%2F%2Faguerra1508.github.io%2FHomework%2F02-Homework%2Fcontact.html
-https://img.shields.io/w3c-validation/html?targetUrl=https%3A%2F%2Faguerra1508.github.io%2FHomework%2F02-Homework%2Fportfolio.html
-https://img.shields.io/github/languages/top/aguerra1508/aguerra1508.github.io
+![w3C Validation](https://img.shields.io/w3c-validation/html?targetUrl=https%3A%2F%2Faguerra1508.github.io%2FHomework%2F02-Homework%2Findex.html)
+![w3C Validation](https://img.shields.io/w3c-validation/html?targetUrl=https%3A%2F%2Faguerra1508.github.io%2FHomework%2F02-Homework%2Fcontact.html)
+![w3C Validation](https://img.shields.io/w3c-validation/html?targetUrl=https%3A%2F%2Faguerra1508.github.io%2FHomework%2F02-Homework%2Fportfolio.html)
+![License](https://img.shields.io/github/license/aguerra1508/aguerra1508.github.io)
+![Languages](https://img.shields.io/github/languages/top/aguerra1508/aguerra1508.github.io)
 
 ## Contributing
 
