@@ -23,58 +23,79 @@
     <title>Analee Guerra</title>
 
   </head>
+
   <body>
-    <!--Nav bar which collapses as screen size decreases-->
-     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <span class="navbar-brand mb-0 h1">Analee Guerra</span>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-      
-        <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
-            <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
-            <li class="nav-item active">
-              <a class="nav-link text-muted" href="index.html">About Me</a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link text-danger" href="portfolio.html">Portfolio<span class="sr-only">(current)</span></a>
-            </li>
-            <li class="nav-item">
-              <a class="nav-link text-muted" href="contact.html">Contact</a>
-            </li>
-          </ul>
-        </div>
+    <!--Header semantic element-->
+    <header>
+
+      <!--Bootstrap nav bar w/ nav semantic element. Collapses as screen size decreases-->
+      <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+
+          <span class="navbar-brand mb-0 h1">Analee Guerra</span>
+
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+
+          <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+              <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+              <li class="nav-item active">
+                <a class="nav-link text-muted" href="index.html">About Me</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-danger" href="portfolio.html">Portfolio<span class="sr-only">(current)</span></a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-muted" href="contact.html">Contact</a>
+              </li>
+            </ul>
+          </div>
       </nav>
-<!-- Bootstrap grid for main content -->    
-<div class="container">
-  <div class="row">
-      <div class="col-9">
-          <h1>Portfolio</h1> 
-          <h2 class="text-danger">Coming Soon!</h2>
+    </header>
+
+  <!--Section semantic element-->
+  <section>
+
+    <!-- Bootstrap grid for main content -->   
+    <div class="container">
+      <div class="row">
+          <div class="col">
+              <h1>Portfolio</h1>
+              <h2 class="text-danger">Coming Soon!</h2>
+          </div>
       </div>
-  </div>
-  <div class="row">
-      <div class="col-9">
-          <a href ="https://placeholder.com"><img src ="https://via.placeholder.com/350" class="img-fluid" alt="Placeholder 350"></a>
-          <a href ="https://placeholder.com"><img src ="https://via.placeholder.com/350"class="img-fluid" alt="Placeholder 350"></a>
+
+      <div class="row">
+          <div class="col">
+            <!--Image placeholders-->
+              <a href ="https://placeholder.com"><img src ="https://via.placeholder.com/350" class="imgport" alt="Placeholder 350"></a>
+              <a href ="https://placeholder.com"><img src ="https://via.placeholder.com/350" class="imgport" alt="Placeholder 350"></a>
+          </div>
       </div>
-  </div>
-  <div class="row">
-    <div class="col-9">
-        <a href ="https://placeholder.com"><img src ="https://via.placeholder.com/350" class="img-fluid" alt="Placeholder 350"></a>
-        <a href ="https://placeholder.com"><img src ="https://via.placeholder.com/350"class="img-fluid" alt="Placeholder 350"></a>
+
+      <div class="row">
+        <div class="col">
+          <!--Image placeholders-->
+            <a href ="https://placeholder.com"><img src ="https://via.placeholder.com/350" class="imgport" alt="Placeholder 350"></a>
+            <a href ="https://placeholder.com"><img src ="https://via.placeholder.com/350"class="imgport" alt="Placeholder 350"></a>
+        </div>
     </div>
-</div>
-<div class="row">
-  <div class="col-9">
-      <a href ="https://placeholder.com"><img src ="https://via.placeholder.com/350" class="img-fluid" alt="Placeholder 350"></a>
-  </div>
-</div>
-</div>
-<footer class="footer mt-auto py-3">
-  <div class="container">
-      <span class= "text-dark"> &#169; Copyright 2020 Analee Guerra</span>
+
+    <div class="row">
+      <div class="col">
+          <!--Image placeholders-->
+          <a href ="https://placeholder.com"><img src ="https://via.placeholder.com/350" class="imgport" alt="Placeholder 350"></a>
       </div>
-</footer>
-    </body>
+    </div>
+    </div>
+  </section>
+
+  <!--Bootstrap sticky footer w/ semantic element-->
+    <footer class="footer mt-auto py-3">
+      <div class="container">
+          <span class= "text-dark"> &#169; Copyright 2020 Analee Guerra</span>
+      </div>
+    </footer>
+
+  </body>
 </html>
