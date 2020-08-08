@@ -8,7 +8,7 @@ var uCase = ["A","B","C","D","E","F","G","H","I","J","K","L","M","N","O","P","Q"
 var uNum = ["0","1","2","3","4","5","6","7","8","9"];
 var specialChar = ["!","@","#","$","%","^","&","*","(",")","- ","_","+","=","?","<",">","~","`","{","}","[","]",";",":"];
 
-//Variable to concatinate user choices into an array
+//Variable to put user choices into an array
 var userChoices = [];
 
 // Add event listener to generate button
@@ -37,7 +37,7 @@ function generatePassword (){
   var chooseLow = (confirm("Do you want to include lowercase letters?\nClick Ok for Yes, Cancel for No."));
     if (chooseLow === true) {
       //If true, add the lower case array to the user choice array
-      userChoices = userChoices.concat(lCase);
+      userChoices = userChoices.concat(lCase)
       console.log(userChoices);
     } else {
       console.log(false);
@@ -48,7 +48,7 @@ function generatePassword (){
     if (chooseUpper === true) {
       //If true, add the upper case array to the user choice array
       userChoices = userChoices.concat(uCase);
-      console.log(userChoices);
+      console.log(uCase);
     } else {
       console.log(false);
     }
@@ -86,7 +86,7 @@ function generatePassword (){
      var password = "";
      //Loop through all userchoices. Password length choosen by the user.
       for (var i = 0; i <=chooseLength; i++){
-        //Create an array of all of the user choices and randomize them
+        //Create an array of all of the selected user choices and randomize them
         var randomPassword = userChoices[Math.floor(Math.random()*userChoices.length)];
         //Make password by adding the random password variable to the password variable
        password = password + randomPassword;
