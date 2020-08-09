@@ -44,9 +44,11 @@ WDS WebDevSimplified Youtube Channel - https://www.youtube.com/watch?v=iKo9pDKKH
 N/A
 
 ## Badges
-![Git Hub Languages!](https://img.shields.io/github/languages/top/aguerra1508/aguerra1508.github.io)
+![Git Hub Languages](https://img.shields.io/github/languages/top/aguerra1508/aguerra1508.github.io)
 
-![Validtion](https://img.shields.io/w3c-validation/html?targetUrl=https%3A%2F%2Faguerra1508.github.io%2FHomework%2F03-Homework%2FDevelop%2Findex.html)
+![W3C Validation](https://img.shields.io/w3c-validation/html?targetUrl=https%3A%2F%2Faguerra1508.github.io%2FHomework%2F03-Homework%2Findex.html)
+
+![GitHub](https://img.shields.io/github/license/aguerra1508/aguerra1508.github.io)
 
 ## Contributing
 
