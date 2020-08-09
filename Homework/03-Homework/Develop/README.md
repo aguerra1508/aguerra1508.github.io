@@ -45,7 +45,9 @@ N/A
 
 ## Badges
 
+https://img.shields.io/github/languages/top/aguerra1508/aguerra1508.github.io
 
+https://img.shields.io/w3c-validation/html?targetUrl=https%3A%2F%2Faguerra1508.github.io%2FHomework%2F03-Homework%2FDevelop%2Findex.html
 
 ## Contributing
 
