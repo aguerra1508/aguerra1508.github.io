@@ -48,11 +48,10 @@ function generatePassword (){
     if (chooseUpper === true) {
       //If true, add the upper case array to the user choice array
       userChoices = userChoices.concat(uCase);
-      console.log(uCase);
+      console.log(userChoices);
     } else {
       console.log(false);
     }
-
   //Confirm if user wants Numbers
   var chooseNum = (confirm("Do you want to include numbers?\nClick Ok for Yes, Cancel for No."));
     if (chooseNum === true) {
