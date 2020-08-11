@@ -10,36 +10,68 @@
 
     <title>Coding Bootcamp Quiz</title>
   </head>
+
   <body>
     <div class="container">
       <div class = "row">
         <div class = "col-6">
-          <h1>Welcome to the Coding Quiz!</h1></div>
-          <div class ="col-6" id = "timer"></div>
-      </div>
-    <div class="card" id = "start-card">
-      <h5 class="card-header">Click Start Quiz to Begin!</h5>
-      <div class="card-body">
-        <a href="#" id = "button" class ="btn btn-primary">Start Quiz</a>
-      </br>
-      </div>
-    </div>
-    <div class="card" id = "questions-card" style="display: none">
-      <h5 class="card-header">Question:</h5>
-      <div class="card-body">
-        <h5 class="card-title">Special title treatment</h5>
-        <div class="card" style="width: 18rem;">
-          <ul class="list-group list-group-flush">
-            <li class="list-group-item">A.</li>
-            <li class="list-group-item">B.</li>
-            <li class="list-group-item">C.</li>
-            <li class="list-group-item">D.</li>
-          </ul>
+          <h1>Welcome to the Coding Quiz!</h1>
         </div>
-      </br>
-        <a href="#" class="btn btn-primary">Next</a>
+        <div class ="col-6 text-right">
+        <h1 id = "timer" class="text-right"></h1>
+        </div>
+      </div>
+      <div class = "row">
+        <div class = "col-12">
+        <div class="card" id = "start-card">
+          <h5 class="card-header text-center">Click Start Quiz to Begin!</h5>
+          <div class="card-body">
+            <a href="#" id = "button" class="btn btn-primary btn-lg btn-block">Start Quiz</a>
+          </div>
+        </div>
+        <div class="card" id = "questions-card" style="display: none">
+          <h5 class="card-header" id = "question-card-header">Question:</h5>
+          <div class="card-body">
+            <div class="card">
+              <ul class="list-group list-group-flush">
+                <li class="list-group-item" id = "choice-a">A.</li>
+                <li class="list-group-item" id = "choice-b">B.</li>
+                <li class="list-group-item" id = "choice-c">C.</li>
+                <li class="list-group-item" id = "choice-d">D.</li>
+              </ul>
+            </div>
+          </br>
+            <a href="#" class="btn btn-primary btn-lg">Next</a>
+          </div>
+        </div>
       </div>
     </div>
+  </div>
+      
+        
+          
+        
+       
+          
+      
+
+     
+        
+          
+          
+            
+          
+        
+          
+            
+            
+              
+        
+      
+        
+          
+          
+    
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>

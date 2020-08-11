@@ -1,3 +1,8 @@
+/*Make timer font size same as Quiz Title*/
+#timer {
+  font-size: x-large;
+}
+
 /*Bootsrap styling for card columns*/
 .card-columns {
     @include media-breakpoint-only(lg) {
