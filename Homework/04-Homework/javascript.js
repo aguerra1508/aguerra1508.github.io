@@ -28,7 +28,7 @@ function hiddenQuestionsUntilStart() {
 
 //Function to start timer when start button clicked
 function startTimer() {
-  var eightMin = 1 * 60;
+  var eightMin = 8 * 60;
   var timerCount = setInterval(function () {
       eightMin--
       var minutes = Math.floor(eightMin / 60);
