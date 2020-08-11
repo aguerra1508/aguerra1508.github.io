@@ -1,6 +1,15 @@
 var startQuizBtn = document.getElementById("button");
 var timer = document.getElementById("timer");
+var start = document.getElementById("start-card");
 var questions = document.getElementById("questions-card");
+
+function hideStart() {
+  if (start.style.display === "none") {
+    start.style.display = "block";
+  } else {
+    start.style.display = "none";
+  }
+}
 
 function hiddenQuestions() {
   questions.style.display = "block";
@@ -18,4 +27,5 @@ function startTimer() {
 }
 
 startQuizBtn.addEventListener ("click", startTimer);
+startQuizBtn.addEventListener ("click", hideStart);
 startQuizBtn.addEventListener("click", hiddenQuestions);
