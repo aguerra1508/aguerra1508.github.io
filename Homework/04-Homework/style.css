@@ -1,4 +1,9 @@
-/*Bootsrap styling for columns*/
+.questions {
+  display: none;
+}
+
+
+/*Bootsrap styling for card columns*/
 .card-columns {
     @include media-breakpoint-only(lg) {
       column-count: 4;

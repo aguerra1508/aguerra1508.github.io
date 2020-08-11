@@ -1,4 +1,3 @@
-
 <!DOCTYPE HTML>
 <html lang="en">
   <head>
@@ -12,29 +11,36 @@
     <title>Coding Bootcamp Quiz</title>
   </head>
   <body>
-    <h1>Welcome to the Coding Quiz!</h1>
-    <svg width="1em" height="1em" viewBox="0 0 16 16" class="bi bi-alarm" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-      <path fill-rule="evenodd" d="M8 15A6 6 0 1 0 8 3a6 6 0 0 0 0 12zm0 1A7 7 0 1 0 8 2a7 7 0 0 0 0 14z"/>
-      <path fill-rule="evenodd" d="M8 4.5a.5.5 0 0 1 .5.5v4a.5.5 0 0 1-.053.224l-1.5 3a.5.5 0 1 1-.894-.448L7.5 8.882V5a.5.5 0 0 1 .5-.5z"/>
-      <path d="M.86 5.387A2.5 2.5 0 1 1 4.387 1.86 8.035 8.035 0 0 0 .86 5.387zM11.613 1.86a2.5 2.5 0 1 1 3.527 3.527 8.035 8.035 0 0 0-3.527-3.527z"/>
-      <path fill-rule="evenodd" d="M11.646 14.146a.5.5 0 0 1 .708 0l1 1a.5.5 0 0 1-.708.708l-1-1a.5.5 0 0 1 0-.708zm-7.292 0a.5.5 0 0 0-.708 0l-1 1a.5.5 0 0 0 .708.708l1-1a.5.5 0 0 0 0-.708zM5.5.5A.5.5 0 0 1 6 0h4a.5.5 0 0 1 0 1H6a.5.5 0 0 1-.5-.5z"/>
-      <path d="M7 1h2v2H7V1z"/>
-    </svg>
-    <div id= "timer"></div>
+    <div class="container">
+      <div class = "row">
+        <div class = "col-6">
+          <h1>Welcome to the Coding Quiz!</h1></div>
+          <div class ="col-6" id = "timer"></div>
+      </div>
     <div class="card">
       <h5 class="card-header">Click Start Quiz to Begin!</h5>
       <div class="card-body">
-        <a href="#" class="btn btn-primary">Start Quiz</a>
+        <a href="#" id = "button" class ="btn btn-primary">Start Quiz</a>
       </br>
-        <h5 class="card-title">Special title treatment</h5>
-        <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-        <div class="list-group">
-          <a href="#" class="list-group-item list-group-item-action">A. HTML</a>
-          <a href="#" class="list-group-item list-group-item-action">B. CSS</a>
-          <a href="#" class="list-group-item list-group-item-action">C. JavaScript</a>
-          <a href="#" class="list-group-item list-group-item-action">D. Web API's</a>
-        </div>
+        <div class="card" id = "questions-card" style="display: none">
+            <h5 class="card-header">Question:</h5>
+            <div class="card-body">
+              <h5 class="card-title">Special title treatment</h5>
+              <div class="card" style="width: 18rem;">
+                <ul class="list-group list-group-flush">
+                  <li class="list-group-item">A.</li>
+                  <li class="list-group-item">B.</li>
+                  <li class="list-group-item">C.</li>
+                  <li class="list-group-item">D.</li>
+                </ul>
+              </div>
+            </br>
+              <a href="#" class="btn btn-primary">Next</a>
+            </div>
+          </div>
+      </br>
       </div>
+    </div>
     </div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
