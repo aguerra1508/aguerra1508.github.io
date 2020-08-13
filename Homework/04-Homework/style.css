@@ -1,9 +1,4 @@
-/*Make timer font size same as Quiz Title*/
-#timer {
-    font-size: x-large;
-  }
-  
-  /*Bootsrap styling for card columns*/
+/*Bootsrap styling for card columns*/
   .card-columns {
       @include media-breakpoint-only(lg) {
         column-count: 4;
@@ -12,3 +7,6 @@
         column-count: 5;
       }
     }
+.btn-group-vertical {
+    padding-bottom: 10px;
+}

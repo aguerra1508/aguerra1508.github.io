@@ -26,13 +26,18 @@
         <div class="card" id = "start-card">
           <h5 class="card-header text-center">Click Start Quiz to Begin!</h5>
           <div class="card-body">
-            <a href="#" id = "start-button" class="btn btn-primary btn-lg">Start Quiz</a>
+            <button id = "start-button" class="btn btn-primary btn-lg">Start Quiz</button>
           </div>
         </div>
         <div class="card" id = "questions-card" style="display: none">
-          <h5 class="card-header" id = "question-text"></h5>
+          <div class="card-header" id = "question-text"></div>
           <div class="card-body">
-              <h3 id = "answer-text"></h3>
+            <div id = "answer-buttons">
+              <button class = "btn btn-primary" id = "choice-A"></button>
+              <button class = "btn btn-primary" id = "choice-B"></button>
+              <button class = "btn btn-primary" id = "choice-C"></button>
+              <button class = "btn btn-primary" id = "choice-D"></button>
+            </div>
           </div>
         </div>
       </div>
