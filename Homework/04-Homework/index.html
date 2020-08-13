@@ -12,36 +12,12 @@
   </head>
 
   <body>
-    <div class="container">
-      <div class = "row">
-        <div class = "col-6">
-          <h1>Welcome to the Coding Quiz!</h1>
-        </div>
-        <div class ="col-6 text-right">
-        <h1 id = "timer" class="text-right"></h1>
-        </div>
-      </div>
-      <div class = "row">
-        <div class = "col-12">
-        <div class="card" id = "start-card">
-          <h5 class="card-header text-center">Click Start Quiz to Begin!</h5>
-          <div class="card-body">
-            <button id = "start-button" class="btn btn-primary btn-lg">Start Quiz</button>
-          </div>
-        </div>
-        <div class="card" id = "questions-card" style="display: none">
-          <div class="card-header" id = "question-text"></div>
-          <div class="card-body">
-            <div id = "answer-buttons">
-              <button class = "btn btn-primary" id = "choice-A"></button>
-              <button class = "btn btn-primary" id = "choice-B"></button>
-              <button class = "btn btn-primary" id = "choice-C"></button>
-              <button class = "btn btn-primary" id = "choice-D"></button>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+    <div id = "timer" class="text-right"></div>
+    <div id = "main-container" class="container">
+      <div id = "start-container">
+      <div class = "text-left">Welcome to the Coding Quiz!</div>
+      <button id = "start-button" class="btn btn-primary btn-lg">Start Quiz</button>
+      </div> 
   </div>
       
     <!-- Optional JavaScript -->

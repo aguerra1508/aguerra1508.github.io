@@ -1,14 +1,7 @@
 //HTML document variables
 var startQuizBtn = document.getElementById("start-button");
 var timer = document.getElementById("timer");
-var startCard = document.getElementById("start-card");
-var questionsCard = document.getElementById("questions-card");
-var questionText = document.getElementById("question-text");
-var answerButtons = document.getElementById("answer-buttons");
-var choiceA = document.getElementById("choice-A");
-var choiceB = document.getElementById("choice-B");
-var choiceC = document.getElementById("choice-C");
-var choiceD = document.getElementById("choice-D");
+var startContain = document.getElementById("start-container");
 
 //Questions and answers object
 var questionsAnswers = [
@@ -25,7 +18,7 @@ var questionsAnswers = [
   {
     question: "What symbols are used to enclose a function?",
     answerChoices: ["open angeled bracket <>", "parenthesis ()", "curly brackets {}","square brackets []"],
-    correctAnswer: "curly brakets {}",
+    correctAnswer: "curly brackets {}",
   },
   {
     question: "The length property returns what value in an array?",
@@ -61,48 +54,57 @@ function startTimer() {
   }, 1000)
 }
 
-//Function to hide start card when start quiz button clicked
+//Function to hide start when start quiz button clicked
 function hideStart() {
-  if (startCard.style.display === "none") {
-    startCard.style.display = "block";
+  if (startContain.style.display === "none") {
+    startContain.style.display = "block";
   } else {
-    startCard.style.display = "none";
+    startContain.style.display = "none";
   }
 }
 
-//Function to keep questions hidden until start button clicked
-function hiddenQuestionsUntilStart() {
-questionsCard.style.display = "block";
-}
-
-//For loop incrementer and score keeper
+//Score keeper
 var score = 0;
-
-//Add question 0 to question text element
-questionText.textContent = questionsAnswers[0].question;
-//Add question 0 answers to answer text element
-choiceA.textContent = questionsAnswers[0].answerChoices[0];
-choiceB.textContent = questionsAnswers[0].answerChoices[1];
-choiceC.textContent = questionsAnswers[0].answerChoices[2];
-choiceD.textContent = questionsAnswers[0].answerChoices[3];
-
-var userChoice = answerButtons.addEventListener("click",function(){
-  console.log(userChoice)
-  if (userChoice === choiceB) {
-    console.log("Correct");
-    score++;
-    console.log(score);
-  } else {
-    console.log("Incorrect");
-    console.log(score);
-    oneMin15sec = oneMin15sec - 5;
+var increment = 0;
+var mainContain = document.getElementById("main-container");
+var questionText = document.createElement("div");
+  
+function nextQues () {
+  questionText.textContent = questionsAnswers[increment].question;
+  mainContain.append(questionText);
+  console.log(questionText);
+    
+  for (var i = 0; i < questionsAnswers[increment].answerChoices.length; i++){
+    var answerText = document.createElement("button");
+    answerText.addEventListener("click",function(){
+      var userChoice = this.textContent;
+      console.log(userChoice);
+      if (userChoice === questionsAnswers[increment].correctAnswer){
+        console.log("correct");
+        increment++;
+        score++;
+        console.log(score);
+        mainContain.innerHTML= "";
+        nextQues();
+      } else {
+        console.log("incorrect");
+        increment++
+        console.log(score);
+        oneMin15sec - 5;
+        mainContain.innerHTML= ""
+        nextQues();
+      }
+      });
+      answerText.textContent = questionsAnswers[increment].answerChoices[i];
+      mainContain.append(answerText);
+      console.log(answerText);
+    }
   }
-});
 
 //Event listeners to hide start card, unhide questions and start timer upon click of the start button
 startQuizBtn.addEventListener ("click", startTimer);
 startQuizBtn.addEventListener ("click", hideStart);
-startQuizBtn.addEventListener("click", hiddenQuestionsUntilStart);
+startQuizBtn.addEventListener("click",nextQues);
 
 //When all questions answered or timer = 0, game is over
 
