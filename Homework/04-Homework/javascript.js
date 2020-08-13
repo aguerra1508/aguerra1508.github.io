@@ -1,8 +1,6 @@
 //HTML document variables
 var startQuizBtn = document.getElementById("start-button");
 var timer = document.getElementById("timer");
-var startQuizBtn = document.getElementById("start-button");
-var timer = document.getElementById("timer");
 var startCard = document.getElementById("start-card");
 var questionsCard = document.getElementById("questions-card");
 var questionText = document.getElementById("question-text");
@@ -37,6 +35,7 @@ var questionsAnswers = [
   },
 ]
 
+//Timer variable
 var oneMin15sec = 75;
 //Function to start timer when start button clicked
 function startTimer() {
@@ -72,12 +71,10 @@ function hiddenQuestionsUntilStart() {
 questionsCard.style.display = "block";
 }
 
-//When all questions answered or timer = 0, game is over
-
-//When game is over, user can save initials & score
+//For loop incrementer and score keeper
 var increment = 0;
-
 var score = 0;
+
 //Adding questions and answers into appropriate spots on card
 questionText.append(questionsAnswers[increment].question);
 
@@ -103,3 +100,7 @@ for(var i = 0; i < questionsAnswers[increment].answerChoices.length; i++){
 startQuizBtn.addEventListener ("click", startTimer);
 startQuizBtn.addEventListener ("click", hideStart);
 startQuizBtn.addEventListener("click", hiddenQuestionsUntilStart);
+
+//When all questions answered or timer = 0, game is over
+
+//When game is over, user can save initials & score
