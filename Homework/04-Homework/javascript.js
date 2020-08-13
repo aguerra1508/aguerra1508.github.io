@@ -61,19 +61,27 @@ function hideStart() {
          timer.textContent= "TIME EXPIRED!";
          var finalScore = localStorage.getItem("Score: ");
          var finalText = document.createElement("div");
-         finalText.textContent = "Your final score is: " + finalScore;
-         mainContain.append(finalText);
-         var form = document.createElement("form");
-         var inputInitials = document.createElement("input");
-         var formSubmit = document.createElement("button");
-         mainContain.append(form);
-         form.append(inputInitials);
-         mainContain.append(formSubmit);
-         formSubmit.textContent = "Submit Initials";
-         formSubmit.addEventListener("click",function(event){
-        event.preventDefault()
-         })
-       }
+        finalText.textContent = "Your final score is: " + finalScore;
+        mainContain.append(finalText);
+        var form = document.createElement("form");
+        var inputInitials = document.createElement("input");
+        inputInitials.setAttribute("id", "initial-input");
+        inputInitials.setAttribute("type","text");
+        var formSubmit = document.createElement("button");
+        mainContain.append(form);
+        form.append(inputInitials);
+        mainContain.append(formSubmit);
+        formSubmit.textContent = "Submit Initials";
+        formSubmit.addEventListener("click",function(event){
+          event.preventDefault();
+          var initials = document.getElementById("initial-input");
+          localStorage.setItem("Initials: ", initials.value);
+          var finalInitials = localStorage.getItem("Initials: ");
+          var scoreInitials = document.createElement("div");
+          scoreInitials.textContent = "High Scores: " + " Initials: " + finalInitials + " Score: " + finalScore;
+          mainContain.append(scoreInitials);
+      });
+         }
    }, 1000)
  }
 
@@ -84,12 +92,12 @@ var score = 0;
   
 function nextQues () {
   var questionText = document.createElement("div");
-  var correctIncorrect = document.createElement("div");
   questionText.textContent = questionsAnswers[increment].question;
   mainContain.append(questionText);
   console.log(questionText);
   
   for (var i = 0; i < questionsAnswers[increment].answerChoices.length; i++){
+    var correctIncorrect = document.createElement("div");
     var answerText = document.createElement("button");
     answerText.addEventListener("click",function(){
       var userChoice = this.textContent;
