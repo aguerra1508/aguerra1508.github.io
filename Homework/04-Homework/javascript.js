@@ -32,61 +32,38 @@ var questionsAnswers = [
     correctAnswer: "null",
   },
 ]
-
+function quizGame(){
 //Function to hide start when start quiz button clicked
-function hideStart() {
-  if (startContain.style.display === "none") {
-    startContain.style.display = "block";
-  } else {
-    startContain.style.display = "none";
+  function hideStart() {
+    if (startContain.style.display === "none") {
+      startContain.style.display = "block";
+    } else {
+      startContain.style.display = "none";
+    }
   }
+//Timer variable
+var oneMin15sec = 75;
+//Function to start timer when start button clicked
+function startTimer() {
+  //Setting timer interval
+  var timerCount = setInterval(function () {
+      oneMin15sec--
+      var minutes = Math.floor(oneMin15sec / 60);
+      var seconds = Math.floor(oneMin15sec % 60);
+      //Formatting seconds to include zero if less than 10 i.e. 09
+      if (seconds < 10) {
+        seconds = "0" + seconds
+      }
+      timer.textContent = "Time Left: " + minutes + ":" + seconds;
+      //Clearing timer interval
+      if (oneMin15sec === 0) {
+       clearInterval(timerCount);
+       timer.textContent= "TIME EXPIRED!";
+       endGame();
+       };
+ }, 1000)
 }
- //Timer variable
- var oneMin15sec = 75;
- //Function to start timer when start button clicked
- function startTimer() {
-   //Setting timer interval
-   var timerCount = setInterval(function () {
-       oneMin15sec--
-       var minutes = Math.floor(oneMin15sec / 60);
-       var seconds = Math.floor(oneMin15sec % 60);
-       //Formatting seconds to include zero if less than 10 i.e. 09
-       if (seconds < 10) {
-         seconds = "0" + seconds
-       }
-       timer.textContent = "Time Left: " + minutes + ":" + seconds;
-       //Clearing timer interval
-       if (oneMin15sec === 0) {
-         clearInterval(timerCount);
-         timer.textContent= "TIME EXPIRED!";
-         var finalScore = localStorage.getItem("Score: ");
-         var finalText = document.createElement("div");
-        finalText.textContent = "Your final score is: " + finalScore;
-        mainContain.append(finalText);
-        var form = document.createElement("form");
-        var inputInitials = document.createElement("input");
-        inputInitials.setAttribute("id", "initial-input");
-        inputInitials.setAttribute("type","text");
-        var formSubmit = document.createElement("button");
-        mainContain.append(form);
-        form.append(inputInitials);
-        mainContain.append(formSubmit);
-        formSubmit.textContent = "Submit Initials";
-        formSubmit.addEventListener("click",function(event){
-          event.preventDefault();
-          var initials = document.getElementById("initial-input");
-          localStorage.setItem("Initials: ", initials.value);
-          var finalInitials = localStorage.getItem("Initials: ");
-          var scoreInitials = document.createElement("div");
-          scoreInitials.textContent = "High Scores: " + " Initials: " + finalInitials + " Score: " + finalScore;
-          mainContain.append(scoreInitials);
-      });
-         }
-   }, 1000)
- }
-
 //Variables for question function, score keeper and incrementor
-
 var increment = 0;
 var score = 0;  
   
@@ -127,10 +104,36 @@ function nextQues () {
       localStorage.setItem("Score: ",score); 
     }
   }
-
-//Event listeners to hide start card, unhide questions and start timer upon click of the start button
+function endGame () {
+  var finalScore = localStorage.getItem("Score: ");
+  var finalText = document.createElement("div");
+  finalText.textContent = "Your final score is: " + finalScore;
+  mainContain.append(finalText);
+  var form = document.createElement("form");
+  var inputInitials = document.createElement("input");
+  inputInitials.setAttribute("id", "initial-input");
+  inputInitials.setAttribute("type","text");
+  var formSubmit = document.createElement("button");
+  formSubmit.setAttribute("id","form-submit");
+  mainContain.append(form);
+  form.append(inputInitials);
+  mainContain.append(formSubmit);
+  formSubmit.textContent = "Submit Initials";
+  var formSubmit = document.getElementById("form-submit");
+  formSubmit.addEventListener("click",function(event){
+  event.preventDefault();
+  var initials = document.getElementById("initial-input");
+  localStorage.setItem("Initials: ", initials.value);
+  var finalInitials = localStorage.getItem("Initials: ");
+  var scoreInitials = document.createElement("div");
+  scoreInitials.textContent = "High Scores: " + " Initials: " + finalInitials + " Score: " + finalScore;
+  mainContain.append(scoreInitials);
+  console.log(scoreInitials);
+})
+}
 startQuizBtn.addEventListener ("click", startTimer);
 startQuizBtn.addEventListener ("click", hideStart);
-startQuizBtn.addEventListener("click",nextQues);
-
-//When game is over, user can save initials & score
+startQuizBtn.addEventListener ("click", nextQues);
+}
+quizGame();
+//Event listeners to hide start card, unhide questions and start timer upon click of the start button
