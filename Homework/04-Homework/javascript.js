@@ -2,6 +2,7 @@
 var startQuizBtn = document.getElementById("start-button");
 var timer = document.getElementById("timer");
 var startContain = document.getElementById("start-container");
+var mainContain = document.getElementById("main-container");
 
 //Questions and answers object
 var questionsAnswers = [
@@ -32,28 +33,6 @@ var questionsAnswers = [
   },
 ]
 
-//Timer variable
-var oneMin15sec = 75;
-//Function to start timer when start button clicked
-function startTimer() {
-  //Setting timer interval
-  var timerCount = setInterval(function () {
-      oneMin15sec--
-      var minutes = Math.floor(oneMin15sec / 60);
-      var seconds = Math.floor(oneMin15sec % 60);
-      //Formatting seconds to include zero if less than 10 i.e. 09
-      if (seconds < 10) {
-        seconds = "0" + seconds
-      }
-      timer.textContent = "Time Left: " + minutes + ":" + seconds;
-      //Clearing timer interval
-      if (oneMin15sec === 0) {
-        clearInterval(timerCount);
-        timer.textContent= "TIME EXPIRED!";
-      }
-  }, 1000)
-}
-
 //Function to hide start when start quiz button clicked
 function hideStart() {
   if (startContain.style.display === "none") {
@@ -62,42 +41,82 @@ function hideStart() {
     startContain.style.display = "none";
   }
 }
+ //Timer variable
+ var oneMin15sec = 75;
+ //Function to start timer when start button clicked
+ function startTimer() {
+   //Setting timer interval
+   var timerCount = setInterval(function () {
+       oneMin15sec--
+       var minutes = Math.floor(oneMin15sec / 60);
+       var seconds = Math.floor(oneMin15sec % 60);
+       //Formatting seconds to include zero if less than 10 i.e. 09
+       if (seconds < 10) {
+         seconds = "0" + seconds
+       }
+       timer.textContent = "Time Left: " + minutes + ":" + seconds;
+       //Clearing timer interval
+       if (oneMin15sec === 0) {
+         clearInterval(timerCount);
+         timer.textContent= "TIME EXPIRED!";
+         var finalScore = localStorage.getItem("Score: ");
+         var finalText = document.createElement("div");
+         finalText.textContent = "Your final score is: " + finalScore;
+         mainContain.append(finalText);
+         var form = document.createElement("form");
+         var inputInitials = document.createElement("input");
+         var formSubmit = document.createElement("button");
+         mainContain.append(form);
+         form.append(inputInitials);
+         mainContain.append(formSubmit);
+         formSubmit.textContent = "Submit Initials";
+         formSubmit.addEventListener("click",function(event){
+        event.preventDefault()
+         })
+       }
+   }, 1000)
+ }
 
-//Score keeper
-var score = 0;
+//Variables for question function, score keeper and incrementor
+
 var increment = 0;
-var mainContain = document.getElementById("main-container");
-var questionText = document.createElement("div");
+var score = 0;  
   
 function nextQues () {
+  var questionText = document.createElement("div");
+  var correctIncorrect = document.createElement("div");
   questionText.textContent = questionsAnswers[increment].question;
   mainContain.append(questionText);
   console.log(questionText);
-    
+  
   for (var i = 0; i < questionsAnswers[increment].answerChoices.length; i++){
     var answerText = document.createElement("button");
     answerText.addEventListener("click",function(){
       var userChoice = this.textContent;
       console.log(userChoice);
       if (userChoice === questionsAnswers[increment].correctAnswer){
-        console.log("correct");
+        correctIncorrect.textContent = "Correct!"
+        mainContain.append(correctIncorrect);
+        console.log(correctIncorrect);
         increment++;
         score++;
         console.log(score);
-        mainContain.innerHTML= "";
         nextQues();
       } else {
-        console.log("incorrect");
-        increment++
+        correctIncorrect.textContent = "Incorrect!"
+        mainContain.append(correctIncorrect);
+        console.log(correctIncorrect);
+        increment++;
         console.log(score);
-        oneMin15sec - 5;
-        mainContain.innerHTML= ""
+        oneMin15sec = oneMin15sec - 10;
+        console.log(oneMin15sec);
         nextQues();
       }
       });
       answerText.textContent = questionsAnswers[increment].answerChoices[i];
       mainContain.append(answerText);
       console.log(answerText);
+      localStorage.setItem("Score: ",score); 
     }
   }
 
@@ -105,7 +124,5 @@ function nextQues () {
 startQuizBtn.addEventListener ("click", startTimer);
 startQuizBtn.addEventListener ("click", hideStart);
 startQuizBtn.addEventListener("click",nextQues);
-
-//When all questions answered or timer = 0, game is over
 
 //When game is over, user can save initials & score
