@@ -71,40 +71,33 @@ function nextQues () {
   var questionText = document.createElement("div");
   questionText.textContent = questionsAnswers[increment].question;
   mainContain.append(questionText);
-  console.log(questionText);
   
   for (var i = 0; i < questionsAnswers[increment].answerChoices.length; i++){
-    var correctIncorrect = document.createElement("div");
     var answerText = document.createElement("button");
+    var correctIncorrect = document.createElement("div");
     answerText.addEventListener("click",function(){
       var userChoice = this.textContent;
-      console.log(userChoice);
       if (userChoice === questionsAnswers[increment].correctAnswer){
-        correctIncorrect.textContent = "Correct!"
+        correctIncorrect.textContent = "Correct!";
         mainContain.append(correctIncorrect);
-        console.log(correctIncorrect);
         increment++;
         score++;
-        console.log(score);
         nextQues();
       } else {
-        correctIncorrect.textContent = "Incorrect!"
+        correctIncorrect.textContent = "Incorrect!";
         mainContain.append(correctIncorrect);
-        console.log(correctIncorrect);
         increment++;
-        console.log(score);
         oneMin15sec = oneMin15sec - 10;
-        console.log(oneMin15sec);
         nextQues();
       }
       });
       answerText.textContent = questionsAnswers[increment].answerChoices[i];
       mainContain.append(answerText);
-      console.log(answerText);
       localStorage.setItem("Score: ",score); 
     }
   }
 function endGame () {
+  mainContain.innerHTML= "";
   var finalScore = localStorage.getItem("Score: ");
   var finalText = document.createElement("div");
   finalText.textContent = "Your final score is: " + finalScore;
@@ -121,14 +114,13 @@ function endGame () {
   formSubmit.textContent = "Submit Initials";
   var formSubmit = document.getElementById("form-submit");
   formSubmit.addEventListener("click",function(event){
-  event.preventDefault();
-  var initials = document.getElementById("initial-input");
-  localStorage.setItem("Initials: ", initials.value);
-  var finalInitials = localStorage.getItem("Initials: ");
-  var scoreInitials = document.createElement("div");
-  scoreInitials.textContent = "High Scores: " + " Initials: " + finalInitials + " Score: " + finalScore;
-  mainContain.append(scoreInitials);
-  console.log(scoreInitials);
+    event.preventDefault();
+    var initials = document.getElementById("initial-input");
+    localStorage.setItem("Initials: ", initials.value);
+    var finalInitials = localStorage.getItem("Initials: ");
+    var scoreInitials = document.createElement("div");
+    scoreInitials.textContent = "High Scores: " + " Initials: " + finalInitials + " Score: " + finalScore;
+    mainContain.append(scoreInitials);
 })
 }
 startQuizBtn.addEventListener ("click", startTimer);
