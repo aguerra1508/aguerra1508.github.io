@@ -3,6 +3,7 @@ var startQuizBtn = document.getElementById("start-button");
 var timer = document.getElementById("timer");
 var startContain = document.getElementById("start-container");
 var mainContain = document.getElementById("main-container");
+var timerContain = document.getElementById("timer-container")
 
 //Questions and answers object
 var questionsAnswers = [{
@@ -73,6 +74,7 @@ function quizGame() {
     //If else statement. If at the end of the object, end the game
     if (increment === questionsAnswers.length) {
       endGame();
+      timerContain.innerHTML="";
       //If not at the end of the object.. 
     } else {
       //Create a div to add the question text into the HTML document
@@ -101,7 +103,11 @@ function quizGame() {
             //Increase score
             score++;
             //Insert next question onto page
-            nextQues();
+            var delayInMilliseconds = 500; //0.5 second
+            setTimeout(function() {
+              mainContain.innerHTML=""
+              nextQues();
+            }, delayInMilliseconds);
           } else {
             //If incorrect, add in incorrect text into the HTML document
             correctIncorrect.textContent = "Incorrect!";
@@ -111,7 +117,11 @@ function quizGame() {
             //Penalty to score for incorrect answer
             oneMin15sec = oneMin15sec - 10;
             //Insert next question onto page
-            nextQues();
+            var delayInMilliseconds = 500; //0.5 second
+            setTimeout(function() {
+              mainContain.innerHTML="";
+              nextQues();
+            }, delayInMilliseconds);
           }
         });
         //Add in answer text into the HTML page
@@ -126,6 +136,7 @@ function quizGame() {
   function endGame() {
     //Clear the HTML screen
     mainContain.innerHTML = "";
+    timerContain.innerHTML="";
     //Access score from local storage
     var finalScore = localStorage.getItem("Score: ");
     //Creat div element to add final score text into the HTML document
