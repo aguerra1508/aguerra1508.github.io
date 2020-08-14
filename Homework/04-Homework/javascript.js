@@ -68,34 +68,37 @@ var increment = 0;
 var score = 0;  
   
 function nextQues () {
-  var questionText = document.createElement("div");
-  questionText.textContent = questionsAnswers[increment].question;
-  mainContain.append(questionText);
-  
-  for (var i = 0; i < questionsAnswers[increment].answerChoices.length; i++){
-    var answerText = document.createElement("button");
-    var correctIncorrect = document.createElement("div");
-    answerText.addEventListener("click",function(){
-      var userChoice = this.textContent;
-      if (userChoice === questionsAnswers[increment].correctAnswer){
-        correctIncorrect.textContent = "Correct!";
-        mainContain.append(correctIncorrect);
-        increment++;
-        score++;
-        nextQues();
-      } else {
-        correctIncorrect.textContent = "Incorrect!";
-        mainContain.append(correctIncorrect);
-        increment++;
-        oneMin15sec = oneMin15sec - 10;
-        nextQues();
+  if (increment === questionsAnswers.length){
+    endGame();
+  } else {
+    var questionText = document.createElement("div");
+    questionText.textContent = questionsAnswers[increment].question;
+    mainContain.append(questionText);
+    for (var i = 0; i < questionsAnswers[increment].answerChoices.length; i++){
+      var answerText = document.createElement("button");
+      var correctIncorrect = document.createElement("div");
+      answerText.addEventListener("click",function(){
+        var userChoice = this.textContent;
+        if (userChoice === questionsAnswers[increment].correctAnswer){
+          correctIncorrect.textContent = "Correct!";
+          mainContain.append(correctIncorrect);
+          increment++;
+          score++;
+          nextQues();
+        } else {
+          correctIncorrect.textContent = "Incorrect!";
+          mainContain.append(correctIncorrect);
+          increment++;
+          oneMin15sec = oneMin15sec - 10;
+          nextQues();
+        }
+        });
+        answerText.textContent = questionsAnswers[increment].answerChoices[i];
+        mainContain.append(answerText);
+        localStorage.setItem("Score: ",score); 
       }
-      });
-      answerText.textContent = questionsAnswers[increment].answerChoices[i];
-      mainContain.append(answerText);
-      localStorage.setItem("Score: ",score); 
-    }
   }
+}
 function endGame () {
   mainContain.innerHTML= "";
   var finalScore = localStorage.getItem("Score: ");
