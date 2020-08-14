@@ -164,10 +164,10 @@ function quizGame() {
       //Put initials into local storage
       localStorage.setItem("Initials: ", initials.value);
       var finalInitials = localStorage.getItem("Initials: ");
-      //Create a div to put High score info into the HTML document
       var scoreInitials = document.createElement("div");
       scoreInitials.textContent = "High Scores: " + " Initials: " + finalInitials + " Score: " + finalScore;
       mainContain.append(scoreInitials);
+      //Create a div to put High score info into the HTML document
     })
   }
   //Event listeners to hide start card, unhide questions and start timer upon click of the start button
