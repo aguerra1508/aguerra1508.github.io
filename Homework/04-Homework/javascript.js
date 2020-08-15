@@ -1,13 +1,16 @@
 document.body.style.backgroundColor = "#ecf4f9";
 var h1Title = document.getElementById("welcome-text");
+h1Title.style.fontFamily = "Russo One";
 
 //HTML document variables
 var startQuizBtn = document.getElementById("start-button");
 var timer = document.getElementById("timer");
 timer.style.fontSize = "x-large";
+timer.style.fontFamily = "Russo One";
 var startContain = document.getElementById("start-container");
 var clickStart = document.getElementById ("click-start");
 clickStart.style.fontSize = "x-large";
+clickStart.style.fontFamily = "Russo One"
 var mainContain = document.getElementById("main-container");
 var timerContain = document.getElementById("timer-container")
 
@@ -96,13 +99,16 @@ function quizGame() {
       questionText.style.borderWidth = "1px";
       questionText.style.borderColor = "#dddddd";
       questionText.style.borderRadius = "5px";
+      questionText.style.fontFamily = "Russo One"
       //For loop to increment through the questions and answers
       for (var i = 0; i < questionsAnswers[increment].answerChoices.length; i++) {
         //Create buttons to add the answer choices into the HTML document
         var answerText = document.createElement("button");
         var answerBtn = document.createElement("div");        
         answerText.setAttribute ("class","btn btn-info btn-lg")
-        answerText.style.margin = "5px";
+        answerText.style.marginLeft = "15px";
+        answerText.style.marginBottom = "15px";
+        answerText.style.marginTop = "15px";
         answerBtn.style.backgroundColor = "white";
         //Create a div to add in correct or incorrect text into the HTML document
         var correctIncorrect = document.createElement("div");
@@ -114,8 +120,10 @@ function quizGame() {
           if (userChoice === questionsAnswers[increment].correctAnswer) {
             //If correct, add in correct text into the HTML document
             correctIncorrect.textContent = "Correct!";
-            correctIncorrect.style.fontSize = "x-large";
+            correctIncorrect.style.fontSize = "xx-large";
+            correctIncorrect.style.fontWeight = "bold";
             correctIncorrect.style.color = "green";
+            correctIncorrect.style.fontFamily = "Russo One"
             mainContain.append(correctIncorrect);
             //Increase increment to move to next question answer set
             increment++;
@@ -130,8 +138,10 @@ function quizGame() {
           } else {
             //If incorrect, add in incorrect text into the HTML document
             correctIncorrect.textContent = "Incorrect!";
-            correctIncorrect.style.fontSize = "x-large";
+            correctIncorrect.style.fontSize = "xx-large";
+            correctIncorrect.style.fontWeight = "bold";
             correctIncorrect.style.color = "red";
+            correctIncorrect.style.fontFamily = "Russo One"
             mainContain.append(correctIncorrect);
             //Increase increment to move to next question answer set
             increment++;
@@ -164,6 +174,7 @@ function quizGame() {
     //Creat div element to add final score text into the HTML document
     var gameOver = document.createElement("div");
     gameOver.textContent = "GAME OVER!";
+    gameOver.style.fontFamily = "Russo One"
     gameOver.style.backgroundColor = "#f0f0f0";
     gameOver.style.padding = "10px";
     gameOver.style.fontSize = "xx-large";
@@ -175,9 +186,10 @@ function quizGame() {
     mainContain.append(gameOver)
     var finalText = document.createElement("div");
     finalText.textContent = "Your final score is: " + finalScore;
-    finalText.style.fontSize = "x-large";
-    finalText.style.backgroundColor = "white";
     mainContain.append(finalText);
+    finalText.style.fontSize = "x-large";
+    finalText.style.fontFamily = "Russo One"
+    finalText.style.backgroundColor = "white";
     //Create a form and input for user to add initials into
     var form = document.createElement("form");
     form.style.backgroundColor = "white";
@@ -211,6 +223,7 @@ function quizGame() {
       var finalInitials = localStorage.getItem("Initials: ");
       var highScores = document.createElement("div");
       highScores.textContent = "High Scores:"
+      highScores.style.fontFamily = "Russo One"
       highScores.style.fontSize = "xx-large";
       highScores.style.backgroundColor = "#f0f0f0";
       highScores.style.borderStyle = "solid";
@@ -220,6 +233,7 @@ function quizGame() {
       highScores.style.textAlign = "center";
       var initialsScore = document.createElement("div");
       initialsScore.textContent = "Initials: " + finalInitials + " Score: " + finalScore;
+      initialsScore.style.fontFamily = "Russo One"
       initialsScore.style.fontSize = "x-large";
       initialsScore.style.textAlign = "center";
       initialsScore.style.backgroundColor = "white";
