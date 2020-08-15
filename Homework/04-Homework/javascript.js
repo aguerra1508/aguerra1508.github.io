@@ -1,3 +1,6 @@
+document.body.style.backgroundColor = "#dee9ff";
+var h1Title = document.getElementById("welcome-text");
+
 //HTML document variables
 var startQuizBtn = document.getElementById("start-button");
 var timer = document.getElementById("timer");
@@ -60,7 +63,6 @@ function quizGame() {
       //Clearing timer interval
       if (oneMin15sec === 0) {
         clearInterval(timerCount);
-        timer.textContent = "TIME EXPIRED!";
         endGame();
       };
     }, 1000)
@@ -82,11 +84,15 @@ function quizGame() {
       //Increment the questions into the page sequentially
       questionText.textContent = questionsAnswers[increment].question;
       //Add the question into the div created
+      mainContain.innerHTML=""
       mainContain.append(questionText);
       //For loop to increment through the questions and answers
       for (var i = 0; i < questionsAnswers[increment].answerChoices.length; i++) {
         //Create buttons to add the answer choices into the HTML document
         var answerText = document.createElement("button");
+        var answerButton = document.createElement("div");
+        answerText.setAttribute ("class","btn btn-primary btn-lg")
+        answerText.style.margin = "5px";
         //Create a div to add in correct or incorrect text into the HTML document
         var correctIncorrect = document.createElement("div");
         //Add event listener to buttons for user choice
@@ -126,7 +132,8 @@ function quizGame() {
         });
         //Add in answer text into the HTML page
         answerText.textContent = questionsAnswers[increment].answerChoices[i];
-        mainContain.append(answerText);
+        mainContain.append(answerButton);
+        answerButton.append(answerText);
         //Add score to local storage
         localStorage.setItem("Score: ", score);
       }
@@ -140,20 +147,30 @@ function quizGame() {
     //Access score from local storage
     var finalScore = localStorage.getItem("Score: ");
     //Creat div element to add final score text into the HTML document
+    var gameOver = document.createElement("div");
+    gameOver.textContent = "GAME OVER!";
+    mainContain.append(gameOver)
     var finalText = document.createElement("div");
     finalText.textContent = "Your final score is: " + finalScore;
     mainContain.append(finalText);
     //Create a form and input for user to add initials into
     var form = document.createElement("form");
     var inputInitials = document.createElement("input");
+    inputInitials.style.marginBottom = "10px";
+    var inputForm = document.createElement("div");
     inputInitials.setAttribute("id", "initial-input");
     inputInitials.setAttribute("type", "text");
     //Add a submit score button to form
     var formSubmit = document.createElement("button");
+    var formButton = document.createElement("div");
+    formSubmit.setAttribute ("class","btn btn-primary btn-lg")
     formSubmit.setAttribute("id", "form-submit");
+    formSubmit.style.margin = "5px;"
     mainContain.append(form);
-    form.append(inputInitials);
-    mainContain.append(formSubmit);
+    form.append(inputForm);
+    inputForm.append(inputInitials);
+    mainContain.append(formButton);
+    formButton.append(formSubmit);
     formSubmit.textContent = "Submit Initials";
     //Prevent default for form submit button
     var formSubmit = document.getElementById("form-submit");
@@ -163,10 +180,14 @@ function quizGame() {
       var initials = document.getElementById("initial-input");
       //Put initials into local storage
       localStorage.setItem("Initials: ", initials.value);
+      mainContain.innerHTML="";
       var finalInitials = localStorage.getItem("Initials: ");
-      var scoreInitials = document.createElement("div");
-      scoreInitials.textContent = "High Scores: " + " Initials: " + finalInitials + " Score: " + finalScore;
-      mainContain.append(scoreInitials);
+      var highScores = document.createElement("div");
+      highScores.textContent = "High Scores:"
+      var initialsScore = document.createElement("div");
+      initialsScore.textContent = "Initials: " + finalInitials + " Score: " + finalScore;
+      mainContain.append(highScores);
+      highScores.append(initialsScore);
       //Create a div to put High score info into the HTML document
     })
   }
@@ -177,3 +198,4 @@ function quizGame() {
 }
 //Call function to start the game
 quizGame();
+

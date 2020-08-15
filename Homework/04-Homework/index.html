@@ -10,27 +10,36 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
     integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
 
+  <!-- My CSS-->
+  <link rel="stylesheet" type="text/css" src="style.css">
+
   <title>Coding Bootcamp Quiz</title>
 </head>
 
 <body>
-  <div id="timer-container" class="col">
-    <h1 id="timer" class="text-right"></h1>
-  </div>
-  <div id="main-container" class="container">
-    <div id="start-container">
-      <div class="row">
-        <div class="col" id="welcome-text">
-          <h1 class="text-center">Welcome to the Coding Quiz!</h1>
-        </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-6" id="main-container">
+        <h1 class="text-center" id ="welcome-text">Welcome to the Coding Quiz!</h1>
       </div>
-      <div class="row">
-        <div class="col">
-          <button id="start-button" class="btn btn-primary btn-lg">Start Quiz</button>
+      <div class="col-6" id="timer-container">
+        <h1 id="timer" class="text-right"></h1>
+      </div>
+    </div>
+    <div class = "row">
+      <div class = "col">
+        <div class="card" id="start-container">
+          <div class="card-header">
+            Click Start Quiz to Begin!
+          </div>
+          <div class="card-body">
+            <button id="start-button" class="btn btn-primary btn-lg">Start Quiz</button>
+          </div>
         </div>
       </div>
     </div>
   </div>
+
 
   <!-- Optional JavaScript -->
   <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -47,5 +56,3 @@
   <!-- My Java Script -->
   <script src=javascript.js></script>
 </body>
-
-</html>
