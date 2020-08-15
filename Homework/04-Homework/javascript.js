@@ -84,7 +84,7 @@ function quizGame() {
     } else {
       //Create a div to add the question text into the HTML document
       var questionText = document.createElement("div");
-      questionText.style.backgroundColor = "rbga(0,0,0,.03)";
+      questionText.style.backgroundColor = "#f0f0f0";
       //Add the question into the div created
       mainContain.innerHTML=""
       mainContain.append(questionText);
@@ -92,6 +92,10 @@ function quizGame() {
       questionText.textContent = questionsAnswers[increment].question;
       questionText.style.fontSize = "x-large";
       questionText.style.padding = "10px";
+      questionText.style.borderStyle = "solid";
+      questionText.style.borderWidth = "1px";
+      questionText.style.borderColor = "#dddddd";
+      questionText.style.borderRadius = "5px";
       //For loop to increment through the questions and answers
       for (var i = 0; i < questionsAnswers[increment].answerChoices.length; i++) {
         //Create buttons to add the answer choices into the HTML document
@@ -110,7 +114,7 @@ function quizGame() {
           if (userChoice === questionsAnswers[increment].correctAnswer) {
             //If correct, add in correct text into the HTML document
             correctIncorrect.textContent = "Correct!";
-            correctIncorrect.style.fontSize = "large";
+            correctIncorrect.style.fontSize = "x-large";
             correctIncorrect.style.color = "green";
             mainContain.append(correctIncorrect);
             //Increase increment to move to next question answer set
@@ -126,7 +130,7 @@ function quizGame() {
           } else {
             //If incorrect, add in incorrect text into the HTML document
             correctIncorrect.textContent = "Incorrect!";
-            correctIncorrect.style.fontSize = "large";
+            correctIncorrect.style.fontSize = "x-large";
             correctIncorrect.style.color = "red";
             mainContain.append(correctIncorrect);
             //Increase increment to move to next question answer set
@@ -164,6 +168,10 @@ function quizGame() {
     gameOver.style.padding = "10px";
     gameOver.style.fontSize = "xx-large";
     gameOver.style.textAlign = "center";
+    gameOver.style.borderStyle = "solid";
+    gameOver.style.borderWidth = "1px";
+    gameOver.style.borderColor = "#dddddd";
+    gameOver.style.borderRadius = "5px";
     mainContain.append(gameOver)
     var finalText = document.createElement("div");
     finalText.textContent = "Your final score is: " + finalScore;
@@ -205,14 +213,22 @@ function quizGame() {
       highScores.textContent = "High Scores:"
       highScores.style.fontSize = "xx-large";
       highScores.style.backgroundColor = "#f0f0f0";
+      highScores.style.borderStyle = "solid";
+      highScores.style.borderWidth = "1px";
+      highScores.style.borderColor = "#dddddd";
+      highScores.style.borderRadius = "5px";
       highScores.style.textAlign = "center";
       var initialsScore = document.createElement("div");
       initialsScore.textContent = "Initials: " + finalInitials + " Score: " + finalScore;
       initialsScore.style.fontSize = "x-large";
       initialsScore.style.textAlign = "center";
       initialsScore.style.backgroundColor = "white";
+      initialsScore.style.borderStyle = "solid";
+      initialsScore.style.borderWidth = "1px";
+      initialsScore.style.borderColor = "#dddddd";
+      initialsScore.style.borderRadius = "5px";
       mainContain.append(highScores);
-      highScores.appendChild(initialsScore);
+      mainContain.append(initialsScore);
       //Create a div to put High score info into the HTML document
     })
   }
