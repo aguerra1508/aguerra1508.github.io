@@ -1,18 +1,21 @@
-document.body.style.backgroundColor = "#dee9ff";
+document.body.style.backgroundColor = "#ecf4f9";
 var h1Title = document.getElementById("welcome-text");
 
 //HTML document variables
 var startQuizBtn = document.getElementById("start-button");
 var timer = document.getElementById("timer");
+timer.style.fontSize = "x-large";
 var startContain = document.getElementById("start-container");
+var clickStart = document.getElementById ("click-start");
+clickStart.style.fontSize = "x-large";
 var mainContain = document.getElementById("main-container");
 var timerContain = document.getElementById("timer-container")
 
 //Questions and answers object
 var questionsAnswers = [{
     question: "How are single line comments denoted in JavaScript?",
-    answerChoices: ["/", "//", "/*", "*"],
-    correctAnswer: "//",
+    answerChoices: ["single slash /", "double slash //", "slash with star /*", "star *"],
+    correctAnswer: "double slash //",
   },
   {
     question: "Which of the following is not a JavaScript data type?",
@@ -81,18 +84,22 @@ function quizGame() {
     } else {
       //Create a div to add the question text into the HTML document
       var questionText = document.createElement("div");
-      //Increment the questions into the page sequentially
-      questionText.textContent = questionsAnswers[increment].question;
+      questionText.style.backgroundColor = "rbga(0,0,0,.03)";
       //Add the question into the div created
       mainContain.innerHTML=""
       mainContain.append(questionText);
+      //Increment the questions into the page sequentially
+      questionText.textContent = questionsAnswers[increment].question;
+      questionText.style.fontSize = "x-large";
+      questionText.style.padding = "10px";
       //For loop to increment through the questions and answers
       for (var i = 0; i < questionsAnswers[increment].answerChoices.length; i++) {
         //Create buttons to add the answer choices into the HTML document
         var answerText = document.createElement("button");
-        var answerButton = document.createElement("div");
-        answerText.setAttribute ("class","btn btn-primary btn-lg")
+        var answerBtn = document.createElement("div");        
+        answerText.setAttribute ("class","btn btn-info btn-lg")
         answerText.style.margin = "5px";
+        answerBtn.style.backgroundColor = "white";
         //Create a div to add in correct or incorrect text into the HTML document
         var correctIncorrect = document.createElement("div");
         //Add event listener to buttons for user choice
@@ -103,6 +110,8 @@ function quizGame() {
           if (userChoice === questionsAnswers[increment].correctAnswer) {
             //If correct, add in correct text into the HTML document
             correctIncorrect.textContent = "Correct!";
+            correctIncorrect.style.fontSize = "large";
+            correctIncorrect.style.color = "green";
             mainContain.append(correctIncorrect);
             //Increase increment to move to next question answer set
             increment++;
@@ -117,6 +126,8 @@ function quizGame() {
           } else {
             //If incorrect, add in incorrect text into the HTML document
             correctIncorrect.textContent = "Incorrect!";
+            correctIncorrect.style.fontSize = "large";
+            correctIncorrect.style.color = "red";
             mainContain.append(correctIncorrect);
             //Increase increment to move to next question answer set
             increment++;
@@ -132,8 +143,8 @@ function quizGame() {
         });
         //Add in answer text into the HTML page
         answerText.textContent = questionsAnswers[increment].answerChoices[i];
-        mainContain.append(answerButton);
-        answerButton.append(answerText);
+        mainContain.append(answerBtn);
+        answerBtn.append(answerText);
         //Add score to local storage
         localStorage.setItem("Score: ", score);
       }
@@ -149,12 +160,19 @@ function quizGame() {
     //Creat div element to add final score text into the HTML document
     var gameOver = document.createElement("div");
     gameOver.textContent = "GAME OVER!";
+    gameOver.style.backgroundColor = "#f0f0f0";
+    gameOver.style.padding = "10px";
+    gameOver.style.fontSize = "xx-large";
+    gameOver.style.textAlign = "center";
     mainContain.append(gameOver)
     var finalText = document.createElement("div");
     finalText.textContent = "Your final score is: " + finalScore;
+    finalText.style.fontSize = "x-large";
+    finalText.style.backgroundColor = "white";
     mainContain.append(finalText);
     //Create a form and input for user to add initials into
     var form = document.createElement("form");
+    form.style.backgroundColor = "white";
     var inputInitials = document.createElement("input");
     inputInitials.style.marginBottom = "10px";
     var inputForm = document.createElement("div");
@@ -163,7 +181,8 @@ function quizGame() {
     //Add a submit score button to form
     var formSubmit = document.createElement("button");
     var formButton = document.createElement("div");
-    formSubmit.setAttribute ("class","btn btn-primary btn-lg")
+    formButton.style.backgroundColor = "white";
+    formSubmit.setAttribute ("class","btn btn-info btn-lg")
     formSubmit.setAttribute("id", "form-submit");
     formSubmit.style.margin = "5px;"
     mainContain.append(form);
@@ -184,10 +203,16 @@ function quizGame() {
       var finalInitials = localStorage.getItem("Initials: ");
       var highScores = document.createElement("div");
       highScores.textContent = "High Scores:"
+      highScores.style.fontSize = "xx-large";
+      highScores.style.backgroundColor = "#f0f0f0";
+      highScores.style.textAlign = "center";
       var initialsScore = document.createElement("div");
       initialsScore.textContent = "Initials: " + finalInitials + " Score: " + finalScore;
+      initialsScore.style.fontSize = "x-large";
+      initialsScore.style.textAlign = "center";
+      initialsScore.style.backgroundColor = "white";
       mainContain.append(highScores);
-      highScores.append(initialsScore);
+      highScores.appendChild(initialsScore);
       //Create a div to put High score info into the HTML document
     })
   }
