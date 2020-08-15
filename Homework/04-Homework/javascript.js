@@ -8,7 +8,7 @@ var timer = document.getElementById("timer");
 timer.style.fontSize = "x-large";
 timer.style.fontFamily = "Russo One";
 var startContain = document.getElementById("start-container");
-var clickStart = document.getElementById ("click-start");
+var clickStart = document.getElementById("click-start");
 clickStart.style.fontSize = "x-large";
 clickStart.style.fontFamily = "Russo One"
 var mainContain = document.getElementById("main-container");
@@ -82,17 +82,18 @@ function quizGame() {
     //If else statement. If at the end of the object, end the game
     if (increment === questionsAnswers.length) {
       endGame();
-      timerContain.innerHTML="";
+      timerContain.innerHTML = "";
       //If not at the end of the object.. 
     } else {
       //Create a div to add the question text into the HTML document
       var questionText = document.createElement("div");
       questionText.style.backgroundColor = "#f0f0f0";
       //Add the question into the div created
-      mainContain.innerHTML=""
+      mainContain.innerHTML = ""
       mainContain.append(questionText);
       //Increment the questions into the page sequentially
       questionText.textContent = questionsAnswers[increment].question;
+      questionText.style.marginTop = "25px"
       questionText.style.fontSize = "x-large";
       questionText.style.padding = "10px";
       questionText.style.borderStyle = "solid";
@@ -104,8 +105,8 @@ function quizGame() {
       for (var i = 0; i < questionsAnswers[increment].answerChoices.length; i++) {
         //Create buttons to add the answer choices into the HTML document
         var answerText = document.createElement("button");
-        var answerBtn = document.createElement("div");        
-        answerText.setAttribute ("class","btn btn-info btn-lg")
+        var answerBtn = document.createElement("div");
+        answerText.setAttribute("class", "btn btn-info btn-lg")
         answerText.style.marginLeft = "15px";
         answerText.style.marginBottom = "15px";
         answerText.style.marginTop = "15px";
@@ -131,8 +132,8 @@ function quizGame() {
             score++;
             //Insert next question onto page
             var delayInMilliseconds = 500; //0.5 second
-            setTimeout(function() {
-              mainContain.innerHTML=""
+            setTimeout(function () {
+              mainContain.innerHTML = ""
               nextQues();
             }, delayInMilliseconds);
           } else {
@@ -149,8 +150,8 @@ function quizGame() {
             oneMin15sec = oneMin15sec - 10;
             //Insert next question onto page
             var delayInMilliseconds = 500; //0.5 second
-            setTimeout(function() {
-              mainContain.innerHTML="";
+            setTimeout(function () {
+              mainContain.innerHTML = "";
               nextQues();
             }, delayInMilliseconds);
           }
@@ -168,13 +169,14 @@ function quizGame() {
   function endGame() {
     //Clear the HTML screen
     mainContain.innerHTML = "";
-    timerContain.innerHTML="";
+    timerContain.innerHTML = "";
     //Access score from local storage
     var finalScore = localStorage.getItem("Score: ");
     //Creat div element to add final score text into the HTML document
     var gameOver = document.createElement("div");
     gameOver.textContent = "GAME OVER!";
     gameOver.style.fontFamily = "Russo One"
+    gameOver.style.marginTop = "25px"
     gameOver.style.backgroundColor = "#f0f0f0";
     gameOver.style.padding = "10px";
     gameOver.style.fontSize = "xx-large";
@@ -202,9 +204,9 @@ function quizGame() {
     var formSubmit = document.createElement("button");
     var formButton = document.createElement("div");
     formButton.style.backgroundColor = "white";
-    formSubmit.setAttribute ("class","btn btn-info btn-lg")
+    formSubmit.setAttribute("class", "btn btn-info btn-lg")
     formSubmit.setAttribute("id", "form-submit");
-    formSubmit.style.margin = "5px;"
+    formButton.style.marginLeft = "10px;"
     mainContain.append(form);
     form.append(inputForm);
     inputForm.append(inputInitials);
@@ -219,10 +221,11 @@ function quizGame() {
       var initials = document.getElementById("initial-input");
       //Put initials into local storage
       localStorage.setItem("Initials: ", initials.value);
-      mainContain.innerHTML="";
+      mainContain.innerHTML = "";
       var finalInitials = localStorage.getItem("Initials: ");
       var highScores = document.createElement("div");
       highScores.textContent = "High Scores:"
+      highScores.style.marginTop = "25px"
       highScores.style.fontFamily = "Russo One"
       highScores.style.fontSize = "xx-large";
       highScores.style.backgroundColor = "#f0f0f0";
@@ -253,4 +256,3 @@ function quizGame() {
 }
 //Call function to start the game
 quizGame();
-
