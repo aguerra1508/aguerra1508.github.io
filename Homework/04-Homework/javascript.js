@@ -82,6 +82,7 @@ function quizGame() {
     //If else statement. If at the end of the object, end the game
     if (increment === questionsAnswers.length) {
       endGame();
+      oneMin15sec =0;
       timerContain.innerHTML = "";
       //If not at the end of the object.. 
     } else {
