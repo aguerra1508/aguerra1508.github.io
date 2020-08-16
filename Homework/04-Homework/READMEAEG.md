@@ -14,7 +14,7 @@ The application can be accessed via the following link: https://aguerra1508.gith
 The application opens to the Welcome screen to begin with a short set of instructions. Once the user is ready to begin the quiz, they click "Start Quiz". The a question and set of answer choices will appear on the screen. The user will click the answer button of their choice, if is correct, their score will increase by one point and correct will flash on the screen. If incorrect, the user will lose 10 seconds of time from the quiz and incorrect will flash on the screen. If the user runs out of time or if the user completes all the questions prior to the time being up, the game will end. The user may then choose to input their initials on the high score page. 
 
 Usage and Functionality demonstrated in gif below:
-![Alt Text](/Users/aguerra815/aguerra1508.github.io/Homework/04-Homework/AEGHomework04.gif)
+![Alt Text](Homework/04-Homework/AEGHomework04.gif)
 
 ## Credits
 
@@ -23,9 +23,6 @@ Mozilla JavaScript docs - https://developer.mozilla.org/en-US/docs/Web/JavaScrip
 w3Schools JavaScript - https://www.w3schools.com/js/js_intro.asp
 
 CodeCademy JavaScript - https://www.codecademy.com/learn/introduction-to-javascript
-
-WDS WebDevSimplified Youtube Channel - https://www.youtube.com/watch?v=iKo9pDKKHnc&t=1467s
-
 
 ## License
 
