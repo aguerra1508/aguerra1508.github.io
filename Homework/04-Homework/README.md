@@ -1,42 +1,45 @@
-# 04 Web APIs: Code Quiz
+# Analee Guerra's Homework 04 WebAPI's: Code Quiz
 
-As you proceed in your career as a web developer, you will probably be asked to complete a coding assessment, which is typically a combination of multiple-choice questions and interactive challenges. Build a timed code quiz with multiple-choice questions. This app will run in the browser and feature dynamically updated HTML and CSS powered by your JavaScript code. It will also feature a clean and polished user interface and be responsive, ensuring that it adapts to multiple screen sizes.
+## Description
 
-## User Story
+An application used to help quiz and test knowledge of JavaScript fundamentals. This quiz can be used by coding students to help test their knowledge of JavaScript and also see how they compare against their peers. Use of JavaScript and WebAPI's was used to create variables, if/else statements, functions and methods. This exercise provided me with addtional knowledge of JavaScript functionality as well as the usage of API's, adding HTML elements via JavaScript and CSS styling in JavaScript.
 
-```
-AS A coding bootcamp student
-I WANT to take a timed quiz on JavaScript fundamentals that stores high scores
-SO THAT I can gauge my progress compared to my peers
-```
+## Installation
 
-## Acceptance Criteria
+A web browser such as Google Chrome, Internet Explorer or Firefox is needed to run the application.
 
-```
-GIVEN I am taking a code quiz
-WHEN I click the start button
-THEN a timer starts and I am presented with a question
-WHEN I answer a question
-THEN I am presented with another question
-WHEN I answer a question incorrectly
-THEN time is subtracted from the clock
-WHEN all questions are answered or the timer reaches 0
-THEN the game is over
-WHEN the game is over
-THEN I can save my initials and score
-```
+The application can be accessed via the following link: https://aguerra1508.github.io/Homework/04-Homework/index.html
 
-The following animation demonstrates the application functionality:
+## Usage 
 
-![code quiz](./Assets/04-web-apis-homework-demo.gif)
+The application opens to the Welcome screen to begin with a short set of instructions. Once the user is ready to begin the quiz, they click "Start Quiz". The a question and set of answer choices will appear on the screen. The user will click the answer button of their choice, if is correct, their score will increase by one point and correct will flash on the screen. If incorrect, the user will lose 10 seconds of time from the quiz and incorrect will flash on the screen. If the user runs out of time or if the user completes all the questions prior to the time being up, the game will end. The user may then choose to input their initials on the high score page. 
 
-### Review
+Usage and Functionality demonstrated in gif below:
+![AEG Code Quiz](AEGHomework04.gif)
 
-You are required to submit the following for review:
+## Credits
 
-* The URL of the functional, deployed application.
+Mozilla JavaScript docs - https://developer.mozilla.org/en-US/docs/Web/JavaScript
 
-* The URL of the GitHub repository. Give the repository a unique name and include a README describing the project.
+w3Schools JavaScript - https://www.w3schools.com/js/js_intro.asp
 
-- - -
-© 2019 Trilogy Education Services, a 2U, Inc. brand. All Rights Reserved.
+CodeCademy JavaScript - https://www.codecademy.com/learn/introduction-to-javascript
+
+## License
+
+N/A
+
+## Badges
+![Git Hub Languages](https://img.shields.io/github/languages/top/aguerra1508/aguerra1508.github.io)
+
+![W3C Validation](https://img.shields.io/w3c-validation/html?targetUrl=https%3A%2F%2Faguerra1508.github.io%2FHomework%2F03-Homework%2Findex.html)
+
+![GitHub](https://img.shields.io/github/license/aguerra1508/aguerra1508.github.io)
+
+## Contributing
+
+N/A
+
+## Tests
+
+N/A
