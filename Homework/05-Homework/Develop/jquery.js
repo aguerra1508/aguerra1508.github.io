@@ -1,20 +1,57 @@
 $(document).ready(function () {
     $("#currentDay").text(moment().format('LL'));
-    var workDay = ["9AM", "10AM", "11AM", "12PM", "1PM", "2PM", "3PM", "4PM", "5PM"]
-    for (var i = 0; i < workDay.length; i++) {
+
+    var workDay = [{
+            hour: "9AM",
+            time: 9,
+        },
+        {
+            hour: "10AM",
+            time: 10,
+        },
+        {
+            hour: "11AM",
+            time: 11,
+        },
+        {
+            hour: "12PM",
+            time: 12,
+        },
+        {
+            hour: "1PM",
+            time: 13,
+        },
+        {
+            hour: "2PM",
+            time: 14,
+        },
+        {
+            hour: "3PM",
+            time: 15,
+        },
+        {
+            hour: "4PM",
+            time: 16,
+        },
+        {
+            hour: "5PM",
+            time: 17,
+        }
+    ]
+    for (var i = 0; i < workDay.length; i++){
         var newDiv = $("<div>");
-        var hour = $("<div>");
+        var hourDiv = $("<div>");
         var description = $("<textarea>");
         var save = $("<button>");
         var icon = $("<i>");
 
         newDiv.attr("class", "row time-block");
-        newDiv.attr("id", workDay[i]);
+        newDiv.attr("id", workDay[i].hour);
         $(".container").append(newDiv);
 
-        hour.attr("class", "hour col-1");
-        newDiv.append(hour);
-        hour.text(workDay[i]);
+        hourDiv.attr("class", "hour col-1");
+        newDiv.append(hourDiv);
+        hourDiv.text(workDay[i].hour);
 
         description.attr("class", "description col-10");
         newDiv.append(description);
@@ -25,5 +62,11 @@ $(document).ready(function () {
         icon.attr("class", "far fa-save");
         save.append(icon);
     }
-
 })
+
+    
+
+
+//Current time: moment().format('LT');
+//moment().toString());
+//moment().hour();
