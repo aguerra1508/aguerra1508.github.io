@@ -1,6 +1,5 @@
 $(document).ready(function () {
     $("#currentDay").text(moment().format('LL'));
-
     var workDay = [{
             hour: "9AM",
             time: 9,
@@ -38,7 +37,7 @@ $(document).ready(function () {
             time: 17,
         }
     ]
-    for (var i = 0; i < workDay.length; i++){
+    for (var i = 0; i < workDay.length; i++) {
         var newDiv = $("<div>");
         var hourDiv = $("<div>");
         var description = $("<textarea>");
@@ -54,6 +53,13 @@ $(document).ready(function () {
         hourDiv.text(workDay[i].hour);
 
         description.attr("class", "description col-10");
+        if (workDay[i].time < moment().hour()) {
+            description.attr("class", "description col-10 past");
+        } else if (workDay[i].time > moment().hour()){
+            description.attr("class","description col-10 future");
+        } else {
+            description.att("class", "description col-10 present");
+        }
         newDiv.append(description);
 
         save.attr("class", "saveBtn col-1");
@@ -61,11 +67,8 @@ $(document).ready(function () {
 
         icon.attr("class", "far fa-save");
         save.append(icon);
-    }
+    };
 })
-
-    
-
 
 //Current time: moment().format('LT');
 //moment().toString());
