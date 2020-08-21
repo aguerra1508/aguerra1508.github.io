@@ -37,6 +37,7 @@ $(document).ready(function () {
             time: 17,
         }
     ]
+
     for (var i = 0; i < workDay.length; i++) {
         var newDiv = $("<div>");
         var hourDiv = $("<div>");
@@ -53,13 +54,16 @@ $(document).ready(function () {
         hourDiv.text(workDay[i].hour);
 
         description.attr("class", "description col-10");
+        var eventText = localStorage.getItem(workDay[i].hour || "");
+        description.val(eventText);
         if (workDay[i].time < moment().hour()) {
-            description.attr("class", "description col-10 past");
+            description.addClass("past");
         } else if (workDay[i].time > moment().hour()){
-            description.attr("class","description col-10 future");
+            description.addClass("future");
         } else {
-            description.att("class", "description col-10 present");
+            description.addClass("present");
         }
+            
         newDiv.append(description);
 
         save.attr("class", "saveBtn col-1");
@@ -68,6 +72,11 @@ $(document).ready(function () {
         icon.attr("class", "far fa-save");
         save.append(icon);
     };
+    $(".saveBtn").click(function() {
+        var descripText = $(this).siblings("textarea").val();
+        var timeText = $(this).siblings(".hour")[0].innerText;
+        localStorage.setItem(timeText,descripText);
+       });
 })
 
 //Current time: moment().format('LT');
