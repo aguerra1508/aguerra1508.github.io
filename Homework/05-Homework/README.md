@@ -14,7 +14,8 @@ The application can be accessed via the following link: https://aguerra1508.gith
 
 The application page displays the current days Work Day Schedule. The date is displayed at the top of the screen.  When the user is ready to add an event to the calender, the user will type the event in the colored area of the time slot. The user will then click save in order to save the event to the calendar. As the day progresses, the time slots will change color according to if events have happened in the past (grey), present (red) or future (green). This will help the user see where they are at in the day and hopefully provide better time management. 
 
-
+Usage and Functionality demonstrated in gif below:
+![AEG Work Day Scheduler](AEGHomework05.gif)
 
 ## Credits
 

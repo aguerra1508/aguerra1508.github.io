@@ -5,11 +5,11 @@ $(document).ready(function () {
     //Work day object with hour display and military time for moment js
     var workDay = [{
             hour: "9AM",
-            time: 9,
+            time: 8,
         },
         {
             hour: "10AM",
-            time: 10,
+            time: 9,
         },
         {
             hour: "11AM",
