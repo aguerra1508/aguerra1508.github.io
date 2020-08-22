@@ -1,46 +1,45 @@
-# 05 Third-Party APIs: Work Day Scheduler
+# Analee Guerra's Homework 05 Third Party API's: Work Day Scheduler
 
-Create a simple calendar application that allows the user to save events for each hour of the day. This app will run in the browser and feature dynamically updated HTML and CSS powered by jQuery.
+## Description
 
-You'll need to use the [Moment.js](https://momentjs.com/) library to work with date and time. Be sure to read the documentation carefully and concentrate on using Moment.js in the browser.
+An application used to assist employess keep track of important events on a daily calendar. This schedulaer can be used to help manage time effectively and differentiate between past, present and future events. JQuery was used to help create the template and dymnamically change it according to the time using Moment JS. This exercise provided me with addtional knowledge of JQuery functionality as well as the usage of other API's, adding HTML elements via JQuery.
 
-## User Story
+## Installation
 
-```
-AS AN employee with a busy schedule
-I WANT to add important events to a daily planner
-SO THAT I can manage my time effectively
-```
+A web browser such as Google Chrome, Internet Explorer or Firefox is needed to run the application.
 
-## Acceptance Criteria
+The application can be accessed via the following link: https://aguerra1508.github.io/Homework/05-Homework/index.html
 
-```
-GIVEN I am using a daily planner to create a schedule
-WHEN I open the planner
-THEN the current day is displayed at the top of the calendar
-WHEN I scroll down
-THEN I am presented with timeblocks for standard business hours
-WHEN I view the timeblocks for that day
-THEN each timeblock is color coded to indicate whether it is in the past, present, or future
-WHEN I click into a timeblock
-THEN I can enter an event
-WHEN I click the save button for that timeblock
-THEN the text for that event is saved in local storage
-WHEN I refresh the page
-THEN the saved events persist
-```
+## Usage 
 
-The following animation demonstrates the application functionality:
+The application opens to the Welcome screen to begin with a short set of instructions. Once the user is ready to begin the quiz, they click "Start Quiz". A question and set of answer choices will appear on the screen. The user will click the answer button of their choice, if is correct, their score will increase by one point and correct will flash on the screen. If incorrect, the user will lose 10 seconds of time from the quiz and incorrect will flash on the screen. The quiz will then move on to the next question. If the user runs out of time or if the user completes all the questions prior to the time being up, the game will end. The user may then choose to input their initials on the high score page. 
 
-![day planner demo](./Assets/05-third-party-apis-homework-demo.gif)
+Usage and Functionality demonstrated in gif below:
+![AEG Code Quiz](AEGHomework04.gif)
 
-## Review
+## Credits
 
-You are required to submit the following for review:
+Mozilla JavaScript docs - https://developer.mozilla.org/en-US/docs/Web/JavaScript
 
-* The URL of the deployed application.
+w3Schools JavaScript - https://www.w3schools.com/js/js_intro.asp
 
-* The URL of the GitHub repository. Give the repository a unique name and include a README describing the project.
+CodeCademy JavaScript - https://www.codecademy.com/learn/introduction-to-javascript
 
-- - -
-© 2019 Trilogy Education Services, a 2U, Inc. brand. All Rights Reserved.
+## License
+
+N/A
+
+## Badges
+![Git Hub Languages](https://img.shields.io/github/languages/top/aguerra1508/aguerra1508.github.io)
+
+![W3C Validation](https://img.shields.io/w3c-validation/html?targetUrl=https%3A%2F%2Faguerra1508.github.io%2FHomework%2F03-Homework%2Findex.html)
+
+![GitHub](https://img.shields.io/github/license/aguerra1508/aguerra1508.github.io)
+
+## Contributing
+
+N/A
+
+## Tests
+
+N/A
