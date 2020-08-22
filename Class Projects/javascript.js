@@ -35,6 +35,7 @@ $("#search").on("click", function() {
                 $(pubDateDiv).attr("id", "pubdate");
                 newArticle.append(pubDateDiv);
                 var pubDateInfo = results[i].pub_date;
+                console.log(pubDateInfo);
                 pubDateDiv.innerHTML = "Publication Date: " + pubDateInfo;
 
                 var abstractDiv = document.createElement("div")
