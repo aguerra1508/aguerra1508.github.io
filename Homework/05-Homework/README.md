@@ -2,7 +2,7 @@
 
 ## Description
 
-An application used to assist employess keep track of important events on a daily calendar. This scheduler can be used to help manage time effectively and differentiate between past, present and future events. JQuery was used to help create the template and dymnamically change it according to the time using Moment JS. This exercise provided me with addtional knowledge of JQuery functionality as well as the usage of other API's, adding HTML elements via JQuery.
+An application used to assist employess keep track of important events on a daily calendar. This scheduler can be used to help manage time effectively and differentiate between past, present and future events. jQuery was used to help create the template and dymnamically change it according to the time using Moment JS. This exercise provided me with addtional knowledge of JQuery functionality as well as the usage of other API's, adding HTML elements via jQuery.
 
 ## Installation
 
@@ -12,18 +12,19 @@ The application can be accessed via the following link: https://aguerra1508.gith
 
 ## Usage 
 
-The application opens to the Welcome screen to begin with a short set of instructions. Once the user is ready to begin the quiz, they click "Start Quiz". A question and set of answer choices will appear on the screen. The user will click the answer button of their choice, if is correct, their score will increase by one point and correct will flash on the screen. If incorrect, the user will lose 10 seconds of time from the quiz and incorrect will flash on the screen. The quiz will then move on to the next question. If the user runs out of time or if the user completes all the questions prior to the time being up, the game will end. The user may then choose to input their initials on the high score page. 
+The application page displays the current days Work Day Schedule. The date is displayed at the top of the screen.  When the user is ready to add an event to the calender, the user will type the event in the colored area of the time slot. The user will then click save in order to save the event to the calendar. As the day progresses, the time slots will change color according to if events have happened in the past (grey), present (red) or future (green). This will help the user see where they are at in the day and hopefully provide better time management. 
 
-Usage and Functionality demonstrated in gif below:
-![AEG Code Quiz](AEGHomework04.gif)
+
 
 ## Credits
 
-Mozilla JavaScript docs - https://developer.mozilla.org/en-US/docs/Web/JavaScript
+jQuery - https://api.jquery.com/
 
-w3Schools JavaScript - https://www.w3schools.com/js/js_intro.asp
+w3Schools jQuery - https://www.w3schools.com/jquery/default.asp
 
-CodeCademy JavaScript - https://www.codecademy.com/learn/introduction-to-javascript
+Cheat sheet for moving from jQuery to vanilla JavaScript - https://tobiasahlin.com/blog/move-from-jquery-to-vanilla-javascript/
+
+Mozilla MDN Web Docs jQuery - https://developer.mozilla.org/en-US/docs/Glossary/jQuery
 
 ## License
 
@@ -32,7 +33,7 @@ N/A
 ## Badges
 ![Git Hub Languages](https://img.shields.io/github/languages/top/aguerra1508/aguerra1508.github.io)
 
-![W3C Validation](https://img.shields.io/w3c-validation/html?targetUrl=https%3A%2F%2Faguerra1508.github.io%2FHomework%2F03-Homework%2Findex.html)
+![W3c Validation](https://img.shields.io/w3c-validation/html?targetUrl=https%3A%2F%2Faguerra1508.github.io%2FHomework%2F05-Homework%2Findex.html)
 
 ![GitHub](https://img.shields.io/github/license/aguerra1508/aguerra1508.github.io)
 
