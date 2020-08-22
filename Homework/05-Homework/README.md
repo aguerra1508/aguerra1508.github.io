@@ -2,7 +2,7 @@
 
 ## Description
 
-An application used to assist employess keep track of important events on a daily calendar. This schedulaer can be used to help manage time effectively and differentiate between past, present and future events. JQuery was used to help create the template and dymnamically change it according to the time using Moment JS. This exercise provided me with addtional knowledge of JQuery functionality as well as the usage of other API's, adding HTML elements via JQuery.
+An application used to assist employess keep track of important events on a daily calendar. This scheduler can be used to help manage time effectively and differentiate between past, present and future events. JQuery was used to help create the template and dymnamically change it according to the time using Moment JS. This exercise provided me with addtional knowledge of JQuery functionality as well as the usage of other API's, adding HTML elements via JQuery.
 
 ## Installation
 
