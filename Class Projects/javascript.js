@@ -11,6 +11,7 @@ $("#search").on("click", function() {
           .then(function(response) {
     
             var results = response.response.docs;
+            console.log(results);
             
             for(var i = 0; i < results.length; i++ ){
     
@@ -20,32 +21,32 @@ $("#search").on("click", function() {
                 $(newArticle).addClass("arts")
 
                 var headlineDiv = document.createElement("div");
-                $(headlineDiv).attr("id","headline");
+                $(headlineDiv).addClass("headline");
                 newArticle.append(headlineDiv)
                 var headlineInfo = results[i].headline.main;
-                headlineDiv.innerHTML = "Title: " + headlineInfo
+                headlineDiv.innerHTML = headlineInfo
 
                 var authorDiv = document.createElement("div");
-                $(authorDiv).attr("id", "author");
+                $(authorDiv).addClass("author");
                 newArticle.append(authorDiv);
                 var authorInfo = results[i].byline.original
                 authorDiv.innerHTML = authorInfo;
 
-                var pubDateDiv = document.createElement("div");
-                $(pubDateDiv).attr("id", "pubdate");
+                /*var pubDateDiv = document.createElement("div");
+                $(pubDateDiv).addClass("pubdate");
                 newArticle.append(pubDateDiv);
                 var pubDateInfo = results[i].pub_date;
                 console.log(pubDateInfo);
-                pubDateDiv.innerHTML = "Publication Date: " + pubDateInfo;
+                pubDateDiv.innerHTML = "Publication Date: " + pubDateInfo;*/
 
                 var abstractDiv = document.createElement("div")
-                $(abstractDiv).attr("id","abstract");
+                $(abstractDiv).addClass("abstract");
                 newArticle.append(abstractDiv);
                 var abstrtDetail = results[i].abstract;
-                abstractDiv.innerHTML = "Summary: " + abstrtDetail;
+                abstractDiv.innerHTML = abstrtDetail;
 
                 var pubURLDiv = document.createElement("a");
-                $(pubURLDiv).attr("id", "link");
+                $(pubURLDiv).addClass("link");
                 newArticle.append(pubURLDiv);
                 var pubURLInfo = results[i].web_url
                 pubURLDiv.href = pubURLInfo;
