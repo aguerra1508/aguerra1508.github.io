@@ -1,0 +1,10 @@
+.col-8 {
+    border-style: solid;
+    border-color: black;
+    border-width: thin;
+}
+.col-4 {
+    border-style: solid;
+    border-color: black;
+    border-width: thin;
+}
