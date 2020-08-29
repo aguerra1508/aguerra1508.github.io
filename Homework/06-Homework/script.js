@@ -78,19 +78,24 @@ $("#search").on("click", function () {
     .then(function (response) {
       console.log(response);
       var city = response.city.name
+      console.log(response.list[0].weather[0].icon);
       var selectedCity = document.getElementById("selected-city");
+      var weatherIcon = response.list[0].weather[0].icon;
+      var iconEl = document.getElementById("weather-icon");
+      iconEl.setAttribute("src","https://openweathermap.org/img/wn/" + weatherIcon + "@2x.png");
+      iconEl.setAttribute("alt",response.list[0].weather[0].description);
       selectedCity.innerHTML = city + " (" + (moment().format('L')) + ")";
       var temp = document.getElementById("temperature");
       var tempinK = response.list[0].main.temp;
       var temptoF = (tempinK * (9 / 5) - 459.67)
       temptoF = Math.floor(temptoF);
-      temp.innerHTML = "Temperature: " + temptoF;
+      temp.innerHTML = "Temperature: " + temptoF + "&#8457";
       var humidity = document.getElementById("humidity");
       var cityHumidity = response.list[0].main.humidity;
-      humidity.innerHTML = "Humidity: " + cityHumidity;
+      humidity.innerHTML = "Humidity: " + cityHumidity + "%";
       var windSpeed = document.getElementById("wind-speed");
       var cityWind = response.list[0].wind.speed;
-      windSpeed.innerHTML = "Wind Speed: " + cityWind;
+      windSpeed.innerHTML = "Wind Speed: " + cityWind + " MPH";
       var city1 = document.getElementById("city1");
       localStorage.setItem(temp, cityName);
 
@@ -106,6 +111,15 @@ $("#search").on("click", function () {
           var uvIndex = document.getElementById("uv-index");
           var cityUV = responseUV.value;
           uvIndex.innerHTML = "UV Index: " + cityUV;
+          if (cityUV <= 2 ){
+            uvIndex.style.color = "green";
+          } if (cityUV === 3|| cityUV === 4|| cityUV === 5){
+            uvIndex.style.color = "yellow";
+          } if (cityUV === 6 || cityUV === 7 || cityUV === 8){
+            uvIndex.style.color = "orange";
+          } if (cityUV > 8) {
+            uvIndex.style.color = "red";
+          }
         });
       city1.innerHTML = localStorage.getItem(temp);
       //AJAX for 5 day forecast
@@ -116,26 +130,30 @@ $("#search").on("click", function () {
         })
         .then(function (response) {
           //day 1
-          console.log(response.list[0].main);
+          console.log(response.list[0].weather[0].icon);
           var day1Temp = document.getElementById("day1Temp");
           var day1TempK = response.list[0].main.temp
           var day1temptoF = (day1TempK * (9 / 5) - 459.67)
           day1temptoF = Math.floor(day1temptoF);
-          day1Temp.innerHTML = "Temp: " + day1temptoF;
+          day1Temp.innerHTML = "Temp: " + day1temptoF + "&#8457";
           var day1Hum = document.getElementById("day1Hum");
           var day1Humid = response.list[0].main.humidity;
-          day1Hum.innerHTML = "Humidity: " + day1Humid;
+          day1Hum.innerHTML = "Humidity: " + day1Humid + "%";
           var day1 = document.getElementById("day1");
           day1.innerHTML = (moment().add(1, 'days').calendar('l'));
+          var weatherPic = document.getElementById("weather-pic-day1");
+          var weatherPicture = response.list[0].weather[0].icon;
+          weatherPic.setAttribute("src","https://openweathermap.org/img/wn/" + weatherPicture + "@2x.png");
+          weatherPic.setAttribute("alt",response.list[0].weather[0].description);
           //day2
           var day2Temp = document.getElementById("day2Temp");
           var day2TempK = response.list[1].main.temp
           var day2temptoF = (day2TempK * (9 / 5) - 459.67)
           day2temptoF = Math.floor(day2temptoF);
-          day2Temp.innerHTML = "Temp: " + day2temptoF;
+          day2Temp.innerHTML = "Temp: " + day2temptoF + "&#8457";
           var day2Hum = document.getElementById("day2Hum");
           var day2Humid = response.list[1].main.humidity;
-          day2Hum.innerHTML = "Humidity: " + day2Humid;
+          day2Hum.innerHTML = "Humidity: " + day2Humid + "%";
           var day2 = document.getElementById("day2");
           day2.innerHTML = (moment().add(2, 'days').calendar('l'));
           //day 3
@@ -143,10 +161,10 @@ $("#search").on("click", function () {
           var day3TempK = response.list[2].main.temp
           var day3temptoF = (day3TempK * (9 / 5) - 459.67)
           day3temptoF = Math.floor(day3temptoF);
-          day3Temp.innerHTML = "Temp: " + day3temptoF;
+          day3Temp.innerHTML = "Temp: " + day3temptoF + "&#8457";
           var day3Hum = document.getElementById("day3Hum");
           var day3Humid = response.list[2].main.humidity;
-          day3Hum.innerHTML = "Humidity: " + day3Humid;
+          day3Hum.innerHTML = "Humidity: " + day3Humid + "%";
           var day3 = document.getElementById("day3");
           day3.innerHTML = (moment().add(3, 'days').calendar('l'));
           //day 4
@@ -154,10 +172,10 @@ $("#search").on("click", function () {
           var day4TempK = response.list[3].main.temp
           var day4temptoF = (day4TempK * (9 / 5) - 459.67)
           day4temptoF = Math.floor(day4temptoF);
-          day4Temp.innerHTML = "Temp: " + day4temptoF;
+          day4Temp.innerHTML = "Temp: " + day4temptoF + "&#8457";
           var day4Hum = document.getElementById("day4Hum");
           var day4Humid = response.list[3].main.humidity;
-          day4Hum.innerHTML = "Humidity: " + day4Humid;
+          day4Hum.innerHTML = "Humidity: " + day4Humid + "%";
           var day4 = document.getElementById("day4");
           day4.innerHTML = (moment().add(4, 'days').calendar('l'));
           //day 5
@@ -165,10 +183,10 @@ $("#search").on("click", function () {
           var day5TempK = response.list[4].main.temp
           var day5temptoF = (day5TempK * (9 / 5) - 459.67)
           day5temptoF = Math.floor(day5temptoF);
-          day5Temp.innerHTML = "Temp: " + day5temptoF;
+          day5Temp.innerHTML = "Temp: " + day5temptoF + "&#8457";
           var day5Hum = document.getElementById("day5Hum");
           var day5Humid = response.list[4].main.humidity;
-          day5Hum.innerHTML = "Humidity: " + day5Humid;
+          day5Hum.innerHTML = "Humidity: " + day5Humid + "%";
           var day5 = document.getElementById("day5");
           day5.innerHTML = (moment().add(5, 'days').calendar('l'));
         })
