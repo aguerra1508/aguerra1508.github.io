@@ -130,7 +130,7 @@ $("#search").on("click", function () {
         })
         .then(function (response) {
           //day 1
-          console.log(response.list[0].weather[0].icon);
+          console.log(response.list[0]);
           var day1Temp = document.getElementById("day1Temp");
           var day1TempK = response.list[0].main.temp
           var day1temptoF = (day1TempK * (9 / 5) - 459.67)
@@ -141,10 +141,10 @@ $("#search").on("click", function () {
           day1Hum.innerHTML = "Humidity: " + day1Humid + "%";
           var day1 = document.getElementById("day1");
           day1.innerHTML = (moment().add(1, 'days').calendar('l'));
-          var weatherPic = document.getElementById("weather-pic-day1");
+          var weatherPicDay1 = document.getElementById("weather-pic-day1");
           var weatherPicture = response.list[0].weather[0].icon;
-          weatherPic.setAttribute("src","https://openweathermap.org/img/wn/" + weatherPicture + "@2x.png");
-          weatherPic.setAttribute("alt",response.list[0].weather[0].description);
+          weatherPicDay1.setAttribute("src","https://openweathermap.org/img/wn/" + weatherPicture + "@2x.png");
+          weatherPicDay1.setAttribute("alt",response.list[0].weather[0].description);
           //day2
           var day2Temp = document.getElementById("day2Temp");
           var day2TempK = response.list[1].main.temp
@@ -156,6 +156,10 @@ $("#search").on("click", function () {
           day2Hum.innerHTML = "Humidity: " + day2Humid + "%";
           var day2 = document.getElementById("day2");
           day2.innerHTML = (moment().add(2, 'days').calendar('l'));
+          var weatherPicDay2 = document.getElementById("weather-pic-day2");
+          var weatherPicture2 = response.list[1].weather[0].icon;
+          weatherPicDay2.setAttribute("src","https://openweathermap.org/img/wn/" + weatherPicture2 + "@2x.png");
+          weatherPicDay2.setAttribute("alt",response.list[1].weather[0].description);
           //day 3
           var day3Temp = document.getElementById("day3Temp");
           var day3TempK = response.list[2].main.temp
@@ -167,6 +171,10 @@ $("#search").on("click", function () {
           day3Hum.innerHTML = "Humidity: " + day3Humid + "%";
           var day3 = document.getElementById("day3");
           day3.innerHTML = (moment().add(3, 'days').calendar('l'));
+          var weatherPicDay3 = document.getElementById("weather-pic-day3");
+          var weatherPicture3 = response.list[2].weather[0].icon;
+          weatherPicDay3.setAttribute("src","https://openweathermap.org/img/wn/" + weatherPicture3 + "@2x.png");
+          weatherPicDay3.setAttribute("alt",response.list[2].weather[0].description);
           //day 4
           var day4Temp = document.getElementById("day4Temp");
           var day4TempK = response.list[3].main.temp
@@ -178,6 +186,10 @@ $("#search").on("click", function () {
           day4Hum.innerHTML = "Humidity: " + day4Humid + "%";
           var day4 = document.getElementById("day4");
           day4.innerHTML = (moment().add(4, 'days').calendar('l'));
+          var weatherPicDay4 = document.getElementById("weather-pic-day4");
+          var weatherPicture4 = response.list[3].weather[0].icon;
+          weatherPicDay4.setAttribute("src","https://openweathermap.org/img/wn/" + weatherPicture4 + "@2x.png");
+          weatherPicDay4.setAttribute("alt",response.list[3].weather[0].description);
           //day 5
           var day5Temp = document.getElementById("day5Temp");
           var day5TempK = response.list[4].main.temp
@@ -189,6 +201,10 @@ $("#search").on("click", function () {
           day5Hum.innerHTML = "Humidity: " + day5Humid + "%";
           var day5 = document.getElementById("day5");
           day5.innerHTML = (moment().add(5, 'days').calendar('l'));
+          var weatherPicDay5 = document.getElementById("weather-pic-day5");
+          var weatherPicture5 = response.list[4].weather[0].icon;
+          weatherPicDay5.setAttribute("src","https://openweathermap.org/img/wn/" + weatherPicture5 + "@2x.png");
+          weatherPicDay5.setAttribute("alt",response.list[4].weather[0].description);
         })
     });
 });
