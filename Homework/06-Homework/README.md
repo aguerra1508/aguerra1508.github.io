@@ -1,46 +1,53 @@
-# 06 Server-Side APIs: Weather Dashboard
+# Analee Guerra's Homework 06 Server-Side APIs: Weather Dashboard
 
-Developers are often tasked with retrieving data from another application's API and using it in the context of their own. Third-party APIs allow developers to access their data and functionality by making requests with specific parameters to a URL. Your challenge is to build a weather dashboard that will run in the browser and feature dynamically updated HTML and CSS.
+## Description
 
-Use the [OpenWeather API](https://openweathermap.org/api) to retrieve weather data for cities. The documentation includes a section called "How to start" that will provide basic setup and usage instructions. Use `localStorage` to store any persistent data.
+An application used to assist travelers by displaying weather conditions and forecasts for specifically searched cities. This can be used to help travelers plan for weather conditions in various cities they may be traveling to. HTML, CSS, jQuery and JavaScfript were used to help create the applicaiton and dymnamically update when a city is earched. 
 
-## User Story
+## Installation
 
-```
-AS A traveler
-I WANT to see the weather outlook for multiple cities
-SO THAT I can plan a trip accordingly
-```
+A web browser such as Google Chrome, Internet Explorer or Firefox is needed to run the application.
 
-## Acceptance Criteria
+The application can be accessed via the following link: https://aguerra1508.github.io/Homework/06-Homework/index.html
 
-```
-GIVEN a weather dashboard with form inputs
-WHEN I search for a city
-THEN I am presented with current and future conditions for that city and that city is added to the search history
-WHEN I view current weather conditions for that city
-THEN I am presented with the city name, the date, an icon representation of weather conditions, the temperature, the humidity, the wind speed, and the UV index
-WHEN I view the UV index
-THEN I am presented with a color that indicates whether the conditions are favorable, moderate, or severe
-WHEN I view future weather conditions for that city
-THEN I am presented with a 5-day forecast that displays the date, an icon representation of weather conditions, the temperature, and the humidity
-WHEN I click on a city in the search history
-THEN I am again presented with current and future conditions for that city
-WHEN I open the weather dashboard
-THEN I am presented with the last searched city forecast
-```
+## Usage 
 
-The following image demonstrates the application functionality:
+The application page displays the current days Work Day Schedule. The date is displayed at the top of the screen.  When the user is ready to add an event to the calender, the user will type the event in the colored area of the time slot. The user will then click save in order to save the event to the calendar. As the day progresses, the time slots will change color according to if events have happened in the past (grey), present (red) or future (green). This will help the user see where they are at in the day and hopefully provide better time management. 
 
-![weather dashboard demo](./Assets/06-server-side-apis-homework-demo.png)
+Usage and Functionality demonstrated in gif below:
+![AEG Work Day Scheduler](AEGHomework05.gif)
 
-## Review
+## Credits
 
-You are required to submit the following for review:
+Open Weather API - https://openweathermap.org/api
 
-* The URL of the deployed application.
+Moment.js - https://momentjs.com/
 
-* The URL of the GitHub repository. Give the repository a unique name and include a README describing the project.
+jQuery - https://api.jquery.com/
 
-- - -
-© 2019 Trilogy Education Services, a 2U, Inc. brand. All Rights Reserved.
+w3Schools jQuery - https://www.w3schools.com/jquery/default.asp
+w3Schools JavaScript - https://www.w3schools.com/js/js_intro.asp
+
+Cheat sheet for moving from jQuery to vanilla JavaScript - https://tobiasahlin.com/blog/move-from-jquery-to-vanilla-javascript/
+
+Mozilla MDN Web Docs jQuery - https://developer.mozilla.org/en-US/docs/Glossary/jQuery
+Mozilla MDN Web Docs JavaScript - https://developer.mozilla.org/en-US/docs/Web/JavaScript
+
+## License
+
+N/A
+
+## Badges
+![Git Hub Languages](https://img.shields.io/github/languages/top/aguerra1508/aguerra1508.github.io)
+
+![W3c Validation](https://img.shields.io/w3c-validation/html?targetUrl=https%3A%2F%2Faguerra1508.github.io%2FHomework%2F06-Homework%2Findex.html)
+
+![GitHub](https://img.shields.io/github/license/aguerra1508/aguerra1508.github.io)
+
+## Contributing
+
+N/A
+
+## Tests
+
+N/A

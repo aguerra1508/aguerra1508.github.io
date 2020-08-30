@@ -2,14 +2,31 @@
 var apiKey = "0a788ecc2d25a7e8e1cbd39fd84dc58c";
 var searches = [];
 
+function getHistory() {
+  var cityHist = localStorage.getItem("city");
+  if (cityHist !== null) {
+    console.log(cityHist);
+    cityHist = cityHist.split(",")
+    console.log(cityHist)
+    //Adding search history list
+    var searchList = document.getElementById("search-history");
+    //For loop to make each into history item into a button
+    for (var i = 0; i < cityHist.length; i++)
+      console.log(cityHist[i]);
+      searchList.append(cityHist[i])
+  } else {
+    console.log("No History");
+  }
+}
+
 function weatherApp() {
   //City search function
   $("#search").on("click", function () {
     //Get city name from search input
     var cityName = document.getElementById("city-name").value;
     searches.push(cityName);
-    localStorage.setItem("city",searches);
-    cityName.value = "";
+    localStorage.setItem("city", searches);
+    console.log(searches);
     //Add to appropriate query URL
     var queryURL = "https://api.openweathermap.org/data/2.5/forecast?q=" + cityName + "&appid=" + apiKey;
     //AJAX call
@@ -19,14 +36,6 @@ function weatherApp() {
       })
       //Then get response
       .then(function (response) {
-        //Adding search history list
-        var searchList = document.getElementById("search-history");
-        //making as buttons
-        var cityBtn = document.createElement("button");
-        cityBtn.setAttribute("id", "prevSearch");
-        cityBtn.setAttribute("class", "list-group-item list-group-item-action");
-        cityBtn.innerHTML = cityName;
-        searchList.append(cityBtn);
         //City result from response
         var city = response.city.name
         //Add city to history list
@@ -67,7 +76,7 @@ function weatherApp() {
           //Change i to be for next day
           var nextDay = (i * 8) + 4;
           //5 day date
-          var forecastDate = response.list[nextDay].dt_txt;
+          var forecastDate = response.list[nextDay].dt_txt.split(" ")[0];
           var dateEl = document.createElement("h5");
           dateEl.innerHTML = forecastDate;
           fiveDayEls[i].append(dateEl);
@@ -119,4 +128,5 @@ function weatherApp() {
       });
   });
 };
+getHistory();
 weatherApp();
