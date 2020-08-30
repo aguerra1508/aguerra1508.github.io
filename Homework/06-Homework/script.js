@@ -2,7 +2,7 @@
 var apiKey = "0a788ecc2d25a7e8e1cbd39fd84dc58c";
 var searches = [];
 
-function getHistory() {
+/*function getHistory() {
   var cityHist = localStorage.getItem("city");
   if (cityHist !== null) {
     console.log(cityHist);
@@ -13,11 +13,11 @@ function getHistory() {
     //For loop to make each into history item into a button
     for (var i = 0; i < cityHist.length; i++)
       console.log(cityHist[i]);
-      searchList.append(cityHist[i])
+      searchList.append(cityHist);
   } else {
     console.log("No History");
   }
-}
+}*/
 
 function weatherApp() {
   //City search function
@@ -36,6 +36,14 @@ function weatherApp() {
       })
       //Then get response
       .then(function (response) {
+        //add city to search list
+        var searchList = document.getElementById("search-history");
+        //making as buttons
+        var cityBtn = document.createElement("button");
+        cityBtn.setAttribute("id", "prevSearch");
+        cityBtn.setAttribute("class", "list-group-item list-group-item-action");
+        cityBtn.innerHTML = cityName;
+        searchList.append(cityBtn);
         //City result from response
         var city = response.city.name
         //Add city to history list
@@ -128,5 +136,5 @@ function weatherApp() {
       });
   });
 };
-getHistory();
+//getHistory();
 weatherApp();

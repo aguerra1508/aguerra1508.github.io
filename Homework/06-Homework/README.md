@@ -12,7 +12,9 @@ The application can be accessed via the following link: https://aguerra1508.gith
 
 ## Usage 
 
-The application page displays the current weather conditions as well as a 5 day forecast. 
+The application page displays the current weather conditions as well as a 5 day forecast. Unfortunatley, I was unable to adequately get the functionality of the items in storage to return back to the page. Items can be seen in local storage and in the console.
+
+![AEGHomework06](2020-08-29-23-49-45.png)
 
 ## Credits
 
